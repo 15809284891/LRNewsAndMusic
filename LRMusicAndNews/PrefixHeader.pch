@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  LRMusicAndNews
+//
+//  Created by    karisli on 16/11/13.
+//  Copyright © 2016年 ***REMOVED***. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#define MAS_SHORTHAND//只要添加了这个宏，就不用带mas了,必须定义在#import "Masonry.h"之前
+#define MAS_SHORTHAND_GLOBALS//添加了该宏，就可以用equlto了，会自动包装
+#import <AFNetWorking/AFNetWorking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImage+LXImage.h"
+#import <MJExtension/MJExtension.h>
+#import "LXConst.h"
+#import "LXURL.h"
+#import "LXnavigationController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <Masonry.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

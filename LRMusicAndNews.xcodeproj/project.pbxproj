@@ -1,0 +1,1302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C02920C1DD0A368004B4AA8 /* UIImage+LXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C02920B1DD0A368004B4AA8 /* UIImage+LXImage.m */; };
+		1C02920E1DD0B47A004B4AA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C02920D1DD0B47A004B4AA8 /* AVFoundation.framework */; };
+		1C0D24871E025566005302C9 /* LXGetLRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D24861E025566005302C9 /* LXGetLRCData.m */; };
+		1C0D248A1E0271A2005302C9 /* LXLRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D24891E0271A2005302C9 /* LXLRC.m */; };
+		1C0D248D1E027A79005302C9 /* LXImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D248C1E027A79005302C9 /* LXImageContentView.m */; };
+		1C206E871DDF2CAB00DF1B76 /* LXPlayerMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */; };
+		1C206E8E1DE04D3200DF1B76 /* LXQueuePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */; };
+		1C213C3C1DFCF6FB00ED098F /* LXOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C213C3B1DFCF6FB00ED098F /* LXOrderDetailCell.m */; };
+		1C4331A21DCEF75800B668F4 /* LXScrollerLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4331A11DCEF75800B668F4 /* LXScrollerLable.m */; };
+		1C4C46FD1DE1CB7500FC7413 /* LXMusicOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C46FC1DE1CB7500FC7413 /* LXMusicOperationView.m */; };
+		1C6867AB1DF6C18C00802426 /* LXMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6867AA1DF6C18C00802426 /* LXMaskView.m */; };
+		1C6867AE1DF6E11E00802426 /* LXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6867AD1DF6E11E00802426 /* LXTableViewController.m */; };
+		1C7CD91A1DE47CE500CE5F8A /* LXSongMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CD9191DE47CE500CE5F8A /* LXSongMenu.m */; };
+		1C9627A91DE6BEAE00489B67 /* LXGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9627A81DE6BEAE00489B67 /* LXGradientButton.m */; };
+		1C9627EA1DE6EDD900489B67 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9627E91DE6EDD900489B67 /* libsqlite3.0.tbd */; };
+		1C9627EE1DE6F21B00489B67 /* LXDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9627ED1DE6F21B00489B67 /* LXDatabase.m */; };
+		1C9627F11DE6F78200489B67 /* LXSongMenuImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9627F01DE6F78200489B67 /* LXSongMenuImageView.m */; };
+		1C9627F41DE6F8DD00489B67 /* LXVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9627F31DE6F8DD00489B67 /* LXVerticalButton.m */; };
+		1C9E17441DEA6C8A0094D659 /* LXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E17431DEA6C8A0094D659 /* LXTableViewCell.m */; };
+		1C9E174C1DEAB09F0094D659 /* LXSongMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E174B1DEAB09F0094D659 /* LXSongMenuController.m */; };
+		1C9E174F1DEAB6120094D659 /* LXNewSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E174E1DEAB6120094D659 /* LXNewSong.m */; };
+		1C9E17521DEAC7520094D659 /* LXRecommmandListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E17511DEAC7520094D659 /* LXRecommmandListViewController.m */; };
+		1C9E17551DEACD650094D659 /* LXAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E17541DEACD650094D659 /* LXAlbum.m */; };
+		1C9E17581DEADB9A0094D659 /* LXAlbumHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9E17571DEADB9A0094D659 /* LXAlbumHeaderView.m */; };
+		1CA738021DDB574800DA49DE /* LXPlayMusicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA738011DDB574800DA49DE /* LXPlayMusicController.m */; };
+		1CAD28211DFD78CC009C4223 /* LXSongMenuDescripView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD28201DFD78CC009C4223 /* LXSongMenuDescripView.m */; };
+		1CAD28241DFD7DDF009C4223 /* LXAlbumDescripView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD28231DFD7DDF009C4223 /* LXAlbumDescripView.m */; };
+		1CBDBBD41DC5BED60088FB8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBBD31DC5BED60088FB8C /* main.m */; };
+		1CBDBBDD1DC5BED70088FB8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBDBBDB1DC5BED70088FB8C /* Main.storyboard */; };
+		1CBDBBDF1DC5BED70088FB8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBDBBDE1DC5BED70088FB8C /* Assets.xcassets */; };
+		1CBDBBE21DC5BED70088FB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBDBBE01DC5BED70088FB8C /* LaunchScreen.storyboard */; };
+		1CBDBBED1DC5BED70088FB8C /* LRMusicAndNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBBEC1DC5BED70088FB8C /* LRMusicAndNewsTests.m */; };
+		1CBDBBF81DC5BED70088FB8C /* LRMusicAndNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBBF71DC5BED70088FB8C /* LRMusicAndNewsUITests.m */; };
+		1CBDBC0E1DC5BFAE0088FB8C /* LXnavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */; };
+		1CBDBC121DC5BFBB0088FB8C /* LXtabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */; };
+		1CBDBC151DC5BFC50088FB8C /* LXtabbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC141DC5BFC50088FB8C /* LXtabbarItem.m */; };
+		1CBDBC181DC5BFCC0088FB8C /* LXtabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC171DC5BFCC0088FB8C /* LXtabbar.m */; };
+		1CBDBC1B1DC5BFE50088FB8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC1A1DC5BFE50088FB8C /* AppDelegate.m */; };
+		1CBDBC2F1DC5C1ED0088FB8C /* SetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC2E1DC5C1ED0088FB8C /* SetController.m */; };
+		1CBE65B71DF40DAE005AB5C3 /* LXMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBE65B61DF40DAE005AB5C3 /* LXMusicTool.m */; };
+		1CC0EE711DF5A3C0000D6FE3 /* LXOperationSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0EE701DF5A3C0000D6FE3 /* LXOperationSongView.m */; };
+		1CC4C4F41DED8D1E00DD6BB4 /* LXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC4C4F31DED8D1E00DD6BB4 /* LXSearchViewController.m */; };
+		1CC4C4F71DEDC25100DD6BB4 /* LXRightIndicater.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CC4C4F61DEDC25100DD6BB4 /* LXRightIndicater.m */; };
+		1CCC35EF1DFBE644006D4EC4 /* LXRankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC35EE1DFBE644006D4EC4 /* LXRankListCell.m */; };
+		1CCC35F61DFBEF7F006D4EC4 /* LXSongMenuListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC35F51DFBEF7F006D4EC4 /* LXSongMenuListCell.m */; };
+		1CCD70D51DFE9BEA00C3843E /* LXMyMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCD70D41DFE9BEA00C3843E /* LXMyMusicViewController.m */; };
+		1CECAFA21DEC3C7C0056A92A /* LXSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CECAFA11DEC3C7C0056A92A /* LXSectionView.m */; };
+		1CECAFA81DEC52620056A92A /* LXSelectListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CECAFA71DEC52620056A92A /* LXSelectListTableViewCell.m */; };
+		1CECAFAB1DEC53AE0056A92A /* LXSelectListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CECAFAA1DEC53AE0056A92A /* LXSelectListTableViewController.m */; };
+		1CECAFAE1DEC6C810056A92A /* LXNavigationListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CECAFAD1DEC6C810056A92A /* LXNavigationListTableView.m */; };
+		1CECAFF31DEC7B0B0056A92A /* LXOrderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CECAFF21DEC7B0B0056A92A /* LXOrderTableView.m */; };
+		1CF17D1C1E018DE0005C2D53 /* LXLRCTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF17D1B1E018DE0005C2D53 /* LXLRCTableView.m */; };
+		1CF3A7611DE920190003FCB8 /* LXRankMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3A7601DE920190003FCB8 /* LXRankMenu.m */; };
+		1CF3A7681DE966BD0003FCB8 /* LXBlurViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3A7671DE966BD0003FCB8 /* LXBlurViewTool.m */; };
+		1CF3A7711DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3A7701DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m */; };
+		1CFC17AC1DE7FA390085C9DE /* LXHiddenNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17AB1DE7FA390085C9DE /* LXHiddenNavigationBar.m */; };
+		1CFC17B21DE8016F0085C9DE /* LXSongMenuListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17B11DE8016F0085C9DE /* LXSongMenuListController.m */; };
+		1CFC17B81DE8024A0085C9DE /* LXRankMenuListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17B71DE8024A0085C9DE /* LXRankMenuListController.m */; };
+		1CFC17BC1DE82FCB0085C9DE /* LXRankMenuListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17BB1DE82FCB0085C9DE /* LXRankMenuListHeaderView.m */; };
+		1CFC17BF1DE830730085C9DE /* LXHorizontalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17BE1DE830730085C9DE /* LXHorizontalButton.m */; };
+		1CFC17C81DE870620085C9DE /* LXOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17C71DE870620085C9DE /* LXOperationView.m */; };
+		1CFC17CB1DE875F60085C9DE /* LXTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC17CA1DE875F60085C9DE /* LXTopView.m */; };
+		1CFE7EAE1DDACC6000D75A7E /* LXOnlineMusicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EAD1DDACC6000D75A7E /* LXOnlineMusicController.m */; };
+		1CFE7EB71DDAFEBC00D75A7E /* LXNewSongController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EB61DDAFEBC00D75A7E /* LXNewSongController.m */; };
+		1CFE7EC11DDAFF2900D75A7E /* LXRankMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EC01DDAFF2900D75A7E /* LXRankMenuController.m */; };
+		1CFE7EC41DDB135E00D75A7E /* LXRankMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EC31DDB135E00D75A7E /* LXRankMenuCell.m */; };
+		1CFE7ECD1DDB1A4E00D75A7E /* LXSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7ECC1DDB1A4E00D75A7E /* LXSong.m */; };
+		3582BB35AD8A9883C8E5585B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C18C15F9E1FF2334FAD80 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CBDBBE91DC5BED70088FB8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CBDBBC71DC5BED60088FB8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CBDBBCE1DC5BED60088FB8C;
+			remoteInfo = LRMusicAndNews;
+		};
+		1CBDBBF41DC5BED70088FB8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CBDBBC71DC5BED60088FB8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CBDBBCE1DC5BED60088FB8C;
+			remoteInfo = LRMusicAndNews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C02920A1DD0A368004B4AA8 /* UIImage+LXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LXImage.h"; sourceTree = "<group>"; };
+		1C02920B1DD0A368004B4AA8 /* UIImage+LXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LXImage.m"; sourceTree = "<group>"; };
+		1C02920D1DD0B47A004B4AA8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C0D24851E025566005302C9 /* LXGetLRCData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXGetLRCData.h; sourceTree = "<group>"; };
+		1C0D24861E025566005302C9 /* LXGetLRCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXGetLRCData.m; sourceTree = "<group>"; };
+		1C0D24881E0271A2005302C9 /* LXLRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXLRC.h; sourceTree = "<group>"; };
+		1C0D24891E0271A2005302C9 /* LXLRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXLRC.m; sourceTree = "<group>"; };
+		1C0D248B1E027A79005302C9 /* LXImageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXImageContentView.h; sourceTree = "<group>"; };
+		1C0D248C1E027A79005302C9 /* LXImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXImageContentView.m; sourceTree = "<group>"; };
+		1C206E851DDF2CAB00DF1B76 /* LXPlayerMusicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXPlayerMusicTool.h; sourceTree = "<group>"; };
+		1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPlayerMusicTool.m; sourceTree = "<group>"; };
+		1C206E8C1DE04D3200DF1B76 /* LXQueuePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXQueuePlayer.h; sourceTree = "<group>"; };
+		1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXQueuePlayer.m; sourceTree = "<group>"; };
+		1C213C3A1DFCF6FB00ED098F /* LXOrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOrderDetailCell.h; sourceTree = "<group>"; };
+		1C213C3B1DFCF6FB00ED098F /* LXOrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOrderDetailCell.m; sourceTree = "<group>"; };
+		1C37E2971DD852520037A74F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1C37E2991DD867EA0037A74F /* LXURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXURL.h; sourceTree = "<group>"; };
+		1C4331A01DCEF75800B668F4 /* LXScrollerLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXScrollerLable.h; sourceTree = "<group>"; };
+		1C4331A11DCEF75800B668F4 /* LXScrollerLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXScrollerLable.m; sourceTree = "<group>"; };
+		1C4C46FB1DE1CB7500FC7413 /* LXMusicOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMusicOperationView.h; sourceTree = "<group>"; };
+		1C4C46FC1DE1CB7500FC7413 /* LXMusicOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMusicOperationView.m; sourceTree = "<group>"; };
+		1C6867A91DF6C18C00802426 /* LXMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMaskView.h; sourceTree = "<group>"; };
+		1C6867AA1DF6C18C00802426 /* LXMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMaskView.m; sourceTree = "<group>"; };
+		1C6867AC1DF6E11E00802426 /* LXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTableViewController.h; sourceTree = "<group>"; };
+		1C6867AD1DF6E11E00802426 /* LXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTableViewController.m; sourceTree = "<group>"; };
+		1C7CD9181DE47CE500CE5F8A /* LXSongMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenu.h; sourceTree = "<group>"; };
+		1C7CD9191DE47CE500CE5F8A /* LXSongMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenu.m; sourceTree = "<group>"; };
+		1C9627A71DE6BEAE00489B67 /* LXGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXGradientButton.h; sourceTree = "<group>"; };
+		1C9627A81DE6BEAE00489B67 /* LXGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXGradientButton.m; sourceTree = "<group>"; };
+		1C9627E91DE6EDD900489B67 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		1C9627EC1DE6F21B00489B67 /* LXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDatabase.h; sourceTree = "<group>"; };
+		1C9627ED1DE6F21B00489B67 /* LXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDatabase.m; sourceTree = "<group>"; };
+		1C9627EF1DE6F78200489B67 /* LXSongMenuImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuImageView.h; sourceTree = "<group>"; };
+		1C9627F01DE6F78200489B67 /* LXSongMenuImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuImageView.m; sourceTree = "<group>"; };
+		1C9627F21DE6F8DD00489B67 /* LXVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXVerticalButton.h; sourceTree = "<group>"; };
+		1C9627F31DE6F8DD00489B67 /* LXVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXVerticalButton.m; sourceTree = "<group>"; };
+		1C9E17421DEA6C8A0094D659 /* LXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTableViewCell.h; sourceTree = "<group>"; };
+		1C9E17431DEA6C8A0094D659 /* LXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTableViewCell.m; sourceTree = "<group>"; };
+		1C9E174B1DEAB09F0094D659 /* LXSongMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuController.m; sourceTree = "<group>"; };
+		1C9E174D1DEAB6120094D659 /* LXNewSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNewSong.h; sourceTree = "<group>"; };
+		1C9E174E1DEAB6120094D659 /* LXNewSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNewSong.m; sourceTree = "<group>"; };
+		1C9E17501DEAC7520094D659 /* LXRecommmandListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRecommmandListViewController.h; sourceTree = "<group>"; };
+		1C9E17511DEAC7520094D659 /* LXRecommmandListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRecommmandListViewController.m; sourceTree = "<group>"; };
+		1C9E17531DEACD650094D659 /* LXAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlbum.h; sourceTree = "<group>"; };
+		1C9E17541DEACD650094D659 /* LXAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlbum.m; sourceTree = "<group>"; };
+		1C9E17561DEADB9A0094D659 /* LXAlbumHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlbumHeaderView.h; sourceTree = "<group>"; };
+		1C9E17571DEADB9A0094D659 /* LXAlbumHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlbumHeaderView.m; sourceTree = "<group>"; };
+		1CA738001DDB574800DA49DE /* LXPlayMusicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXPlayMusicController.h; sourceTree = "<group>"; };
+		1CA738011DDB574800DA49DE /* LXPlayMusicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPlayMusicController.m; sourceTree = "<group>"; };
+		1CAD281F1DFD78CC009C4223 /* LXSongMenuDescripView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuDescripView.h; sourceTree = "<group>"; };
+		1CAD28201DFD78CC009C4223 /* LXSongMenuDescripView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuDescripView.m; sourceTree = "<group>"; };
+		1CAD28221DFD7DDF009C4223 /* LXAlbumDescripView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlbumDescripView.h; sourceTree = "<group>"; };
+		1CAD28231DFD7DDF009C4223 /* LXAlbumDescripView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlbumDescripView.m; sourceTree = "<group>"; };
+		1CBDBBCF1DC5BED60088FB8C /* LRMusicAndNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRMusicAndNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CBDBBD31DC5BED60088FB8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CBDBBDC1DC5BED70088FB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1CBDBBDE1DC5BED70088FB8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1CBDBBE11DC5BED70088FB8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1CBDBBE31DC5BED70088FB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CBDBBE81DC5BED70088FB8C /* LRMusicAndNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRMusicAndNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CBDBBEC1DC5BED70088FB8C /* LRMusicAndNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRMusicAndNewsTests.m; sourceTree = "<group>"; };
+		1CBDBBEE1DC5BED70088FB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CBDBBF31DC5BED70088FB8C /* LRMusicAndNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRMusicAndNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CBDBBF71DC5BED70088FB8C /* LRMusicAndNewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRMusicAndNewsUITests.m; sourceTree = "<group>"; };
+		1CBDBBF91DC5BED70088FB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXnavigationController.m; sourceTree = "<group>"; };
+		1CBDBC0F1DC5BFB20088FB8C /* LXnavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXnavigationController.h; sourceTree = "<group>"; };
+		1CBDBC101DC5BFB80088FB8C /* LXtabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbarViewController.h; sourceTree = "<group>"; };
+		1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXtabbarViewController.m; sourceTree = "<group>"; };
+		1CBDBC131DC5BFC10088FB8C /* LXtabbarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbarItem.h; sourceTree = "<group>"; };
+		1CBDBC141DC5BFC50088FB8C /* LXtabbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXtabbarItem.m; sourceTree = "<group>"; };
+		1CBDBC161DC5BFC90088FB8C /* LXtabbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbar.h; sourceTree = "<group>"; };
+		1CBDBC171DC5BFCC0088FB8C /* LXtabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXtabbar.m; sourceTree = "<group>"; };
+		1CBDBC191DC5BFDE0088FB8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1CBDBC1A1DC5BFE50088FB8C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1CBDBC2D1DC5C1ED0088FB8C /* SetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetController.h; sourceTree = "<group>"; };
+		1CBDBC2E1DC5C1ED0088FB8C /* SetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetController.m; sourceTree = "<group>"; };
+		1CBE65B51DF40DAE005AB5C3 /* LXMusicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMusicTool.h; sourceTree = "<group>"; };
+		1CBE65B61DF40DAE005AB5C3 /* LXMusicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMusicTool.m; sourceTree = "<group>"; };
+		1CC0EE6F1DF5A3C0000D6FE3 /* LXOperationSongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOperationSongView.h; sourceTree = "<group>"; };
+		1CC0EE701DF5A3C0000D6FE3 /* LXOperationSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOperationSongView.m; sourceTree = "<group>"; };
+		1CC4C4F21DED8D1E00DD6BB4 /* LXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSearchViewController.h; sourceTree = "<group>"; };
+		1CC4C4F31DED8D1E00DD6BB4 /* LXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSearchViewController.m; sourceTree = "<group>"; };
+		1CC4C4F51DEDC25100DD6BB4 /* LXRightIndicater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRightIndicater.h; sourceTree = "<group>"; };
+		1CC4C4F61DEDC25100DD6BB4 /* LXRightIndicater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRightIndicater.m; sourceTree = "<group>"; };
+		1CCC35EE1DFBE644006D4EC4 /* LXRankListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankListCell.m; sourceTree = "<group>"; };
+		1CCC35F01DFBE64A006D4EC4 /* LXRankListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXRankListCell.h; sourceTree = "<group>"; };
+		1CCC35F41DFBEF7F006D4EC4 /* LXSongMenuListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuListCell.h; sourceTree = "<group>"; };
+		1CCC35F51DFBEF7F006D4EC4 /* LXSongMenuListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuListCell.m; sourceTree = "<group>"; };
+		1CCD70D31DFE9BEA00C3843E /* LXMyMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMyMusicViewController.h; sourceTree = "<group>"; };
+		1CCD70D41DFE9BEA00C3843E /* LXMyMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMyMusicViewController.m; sourceTree = "<group>"; };
+		1CECAFA01DEC3C7C0056A92A /* LXSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSectionView.h; sourceTree = "<group>"; };
+		1CECAFA11DEC3C7C0056A92A /* LXSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSectionView.m; sourceTree = "<group>"; };
+		1CECAFA61DEC52620056A92A /* LXSelectListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSelectListTableViewCell.h; sourceTree = "<group>"; };
+		1CECAFA71DEC52620056A92A /* LXSelectListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSelectListTableViewCell.m; sourceTree = "<group>"; };
+		1CECAFA91DEC53AE0056A92A /* LXSelectListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSelectListTableViewController.h; sourceTree = "<group>"; };
+		1CECAFAA1DEC53AE0056A92A /* LXSelectListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSelectListTableViewController.m; sourceTree = "<group>"; };
+		1CECAFAC1DEC6C810056A92A /* LXNavigationListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNavigationListTableView.h; sourceTree = "<group>"; };
+		1CECAFAD1DEC6C810056A92A /* LXNavigationListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNavigationListTableView.m; sourceTree = "<group>"; };
+		1CECAFF11DEC7B0B0056A92A /* LXOrderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOrderTableView.h; sourceTree = "<group>"; };
+		1CECAFF21DEC7B0B0056A92A /* LXOrderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOrderTableView.m; sourceTree = "<group>"; };
+		1CF17D1A1E018DE0005C2D53 /* LXLRCTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXLRCTableView.h; sourceTree = "<group>"; };
+		1CF17D1B1E018DE0005C2D53 /* LXLRCTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXLRCTableView.m; sourceTree = "<group>"; };
+		1CF3A75F1DE920190003FCB8 /* LXRankMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRankMenu.h; sourceTree = "<group>"; };
+		1CF3A7601DE920190003FCB8 /* LXRankMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankMenu.m; sourceTree = "<group>"; };
+		1CF3A7661DE966BD0003FCB8 /* LXBlurViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBlurViewTool.h; sourceTree = "<group>"; };
+		1CF3A7671DE966BD0003FCB8 /* LXBlurViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXBlurViewTool.m; sourceTree = "<group>"; };
+		1CF3A76F1DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuTableHeaderView.h; sourceTree = "<group>"; };
+		1CF3A7701DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuTableHeaderView.m; sourceTree = "<group>"; };
+		1CFC17AA1DE7FA390085C9DE /* LXHiddenNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHiddenNavigationBar.h; sourceTree = "<group>"; };
+		1CFC17AB1DE7FA390085C9DE /* LXHiddenNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHiddenNavigationBar.m; sourceTree = "<group>"; };
+		1CFC17B01DE8016F0085C9DE /* LXSongMenuListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuListController.h; sourceTree = "<group>"; };
+		1CFC17B11DE8016F0085C9DE /* LXSongMenuListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuListController.m; sourceTree = "<group>"; };
+		1CFC17B61DE8024A0085C9DE /* LXRankMenuListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRankMenuListController.h; sourceTree = "<group>"; };
+		1CFC17B71DE8024A0085C9DE /* LXRankMenuListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankMenuListController.m; sourceTree = "<group>"; };
+		1CFC17B91DE807210085C9DE /* LXConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXConst.h; sourceTree = "<group>"; };
+		1CFC17BA1DE82FCB0085C9DE /* LXRankMenuListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRankMenuListHeaderView.h; sourceTree = "<group>"; };
+		1CFC17BB1DE82FCB0085C9DE /* LXRankMenuListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankMenuListHeaderView.m; sourceTree = "<group>"; };
+		1CFC17BD1DE830730085C9DE /* LXHorizontalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHorizontalButton.h; sourceTree = "<group>"; };
+		1CFC17BE1DE830730085C9DE /* LXHorizontalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHorizontalButton.m; sourceTree = "<group>"; };
+		1CFC17C61DE870620085C9DE /* LXOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOperationView.h; sourceTree = "<group>"; };
+		1CFC17C71DE870620085C9DE /* LXOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOperationView.m; sourceTree = "<group>"; };
+		1CFC17C91DE875F60085C9DE /* LXTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTopView.h; sourceTree = "<group>"; };
+		1CFC17CA1DE875F60085C9DE /* LXTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTopView.m; sourceTree = "<group>"; };
+		1CFE7EAC1DDACC6000D75A7E /* LXOnlineMusicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOnlineMusicController.h; sourceTree = "<group>"; };
+		1CFE7EAD1DDACC6000D75A7E /* LXOnlineMusicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOnlineMusicController.m; sourceTree = "<group>"; };
+		1CFE7EB51DDAFEBC00D75A7E /* LXNewSongController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNewSongController.h; sourceTree = "<group>"; };
+		1CFE7EB61DDAFEBC00D75A7E /* LXNewSongController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNewSongController.m; sourceTree = "<group>"; };
+		1CFE7EB81DDAFEE800D75A7E /* LXSongMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuController.h; sourceTree = "<group>"; };
+		1CFE7EBF1DDAFF2900D75A7E /* LXRankMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRankMenuController.h; sourceTree = "<group>"; };
+		1CFE7EC01DDAFF2900D75A7E /* LXRankMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankMenuController.m; sourceTree = "<group>"; };
+		1CFE7EC21DDB135E00D75A7E /* LXRankMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRankMenuCell.h; sourceTree = "<group>"; };
+		1CFE7EC31DDB135E00D75A7E /* LXRankMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRankMenuCell.m; sourceTree = "<group>"; };
+		1CFE7ECB1DDB1A4E00D75A7E /* LXSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSong.h; sourceTree = "<group>"; };
+		1CFE7ECC1DDB1A4E00D75A7E /* LXSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSong.m; sourceTree = "<group>"; };
+		30E1183B189EADA8911CA051 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		849803EDB8DD474D7DE23534 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A14C18C15F9E1FF2334FAD80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CBDBBCC1DC5BED60088FB8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C9627EA1DE6EDD900489B67 /* libsqlite3.0.tbd in Frameworks */,
+				1C02920E1DD0B47A004B4AA8 /* AVFoundation.framework in Frameworks */,
+				3582BB35AD8A9883C8E5585B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBE51DC5BED70088FB8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBF01DC5BED70088FB8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C0D24841E025534005302C9 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				1C0D24851E025566005302C9 /* LXGetLRCData.h */,
+				1C0D24861E025566005302C9 /* LXGetLRCData.m */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
+		1C206E881DDFF4FB00DF1B76 /* LXMusicTool */ = {
+			isa = PBXGroup;
+			children = (
+				1C206E851DDF2CAB00DF1B76 /* LXPlayerMusicTool.h */,
+				1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */,
+				1C206E8C1DE04D3200DF1B76 /* LXQueuePlayer.h */,
+				1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */,
+				1CBE65B51DF40DAE005AB5C3 /* LXMusicTool.h */,
+				1CBE65B61DF40DAE005AB5C3 /* LXMusicTool.m */,
+			);
+			name = LXMusicTool;
+			sourceTree = "<group>";
+		};
+		1CA737FC1DDB571800DA49DE /* 播放 */ = {
+			isa = PBXGroup;
+			children = (
+				1C0D24841E025534005302C9 /* tool */,
+				1C206E881DDFF4FB00DF1B76 /* LXMusicTool */,
+				1CA737FF1DDB572D00DA49DE /* Model */,
+				1CA737FE1DDB572700DA49DE /* View */,
+				1CA737FD1DDB572000DA49DE /* Controller */,
+			);
+			name = "播放";
+			sourceTree = "<group>";
+		};
+		1CA737FD1DDB572000DA49DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CA738001DDB574800DA49DE /* LXPlayMusicController.h */,
+				1CA738011DDB574800DA49DE /* LXPlayMusicController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CA737FE1DDB572700DA49DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C4C46FB1DE1CB7500FC7413 /* LXMusicOperationView.h */,
+				1C4C46FC1DE1CB7500FC7413 /* LXMusicOperationView.m */,
+				1CF17D1A1E018DE0005C2D53 /* LXLRCTableView.h */,
+				1CF17D1B1E018DE0005C2D53 /* LXLRCTableView.m */,
+				1C0D248B1E027A79005302C9 /* LXImageContentView.h */,
+				1C0D248C1E027A79005302C9 /* LXImageContentView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CA737FF1DDB572D00DA49DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C0D24881E0271A2005302C9 /* LXLRC.h */,
+				1C0D24891E0271A2005302C9 /* LXLRC.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CBDBBC61DC5BED60088FB8C = {
+			isa = PBXGroup;
+			children = (
+				1CBDBBD11DC5BED60088FB8C /* LRMusicAndNews */,
+				1CBDBBEB1DC5BED70088FB8C /* LRMusicAndNewsTests */,
+				1CBDBBF61DC5BED70088FB8C /* LRMusicAndNewsUITests */,
+				1CBDBBD01DC5BED60088FB8C /* Products */,
+				B32CA165AEA11E1A85F9CF3A /* Pods */,
+				80A2B5B9FCA9E5D9DA8B082F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1CBDBBD01DC5BED60088FB8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBBCF1DC5BED60088FB8C /* LRMusicAndNews.app */,
+				1CBDBBE81DC5BED70088FB8C /* LRMusicAndNewsTests.xctest */,
+				1CBDBBF31DC5BED70088FB8C /* LRMusicAndNewsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CBDBBD11DC5BED60088FB8C /* LRMusicAndNews */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC1C1DC5C0780088FB8C /* Class */,
+				1CBDBC0C1DC5BF830088FB8C /* Other */,
+				1CBDBC051DC5BF5E0088FB8C /* Tool */,
+				1CBDBBDB1DC5BED70088FB8C /* Main.storyboard */,
+				1CBDBBDE1DC5BED70088FB8C /* Assets.xcassets */,
+				1CBDBBE01DC5BED70088FB8C /* LaunchScreen.storyboard */,
+				1CBDBBE31DC5BED70088FB8C /* Info.plist */,
+				1CBDBBD21DC5BED60088FB8C /* Supporting Files */,
+			);
+			path = LRMusicAndNews;
+			sourceTree = "<group>";
+		};
+		1CBDBBD21DC5BED60088FB8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBBD31DC5BED60088FB8C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CBDBBEB1DC5BED70088FB8C /* LRMusicAndNewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBBEC1DC5BED70088FB8C /* LRMusicAndNewsTests.m */,
+				1CBDBBEE1DC5BED70088FB8C /* Info.plist */,
+			);
+			path = LRMusicAndNewsTests;
+			sourceTree = "<group>";
+		};
+		1CBDBBF61DC5BED70088FB8C /* LRMusicAndNewsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBBF71DC5BED70088FB8C /* LRMusicAndNewsUITests.m */,
+				1CBDBBF91DC5BED70088FB8C /* Info.plist */,
+			);
+			path = LRMusicAndNewsUITests;
+			sourceTree = "<group>";
+		};
+		1CBDBC051DC5BF5E0088FB8C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				1CF3A7651DE9668C0003FCB8 /* LXBlurViewTool */,
+				1CFC17C31DE830D10085C9DE /* DataBase */,
+				1CFC17C21DE830BF0085C9DE /* Catagory */,
+				1CFC17C11DE830B00085C9DE /* Lable */,
+				1CFC17C01DE830770085C9DE /* Button */,
+				1CFC17B91DE807210085C9DE /* LXConst.h */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		1CBDBC0C1DC5BF830088FB8C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1CF3A7721DE9C6A90003FCB8 /* View */,
+				1CFC17C51DE831170085C9DE /* Controller */,
+				1CFC17C41DE830EE0085C9DE /* tabBar */,
+				1CBDBC191DC5BFDE0088FB8C /* AppDelegate.h */,
+				1CBDBC1A1DC5BFE50088FB8C /* AppDelegate.m */,
+				1C37E2971DD852520037A74F /* PrefixHeader.pch */,
+				1C37E2991DD867EA0037A74F /* LXURL.h */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		1CBDBC1C1DC5C0780088FB8C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				1CCD70CF1DFE9B9700C3843E /* 我的音乐 */,
+				1CA737FC1DDB571800DA49DE /* 播放 */,
+				1CFE7EA41DDACA2900D75A7E /* 在线音乐 */,
+				1CBDBC261DC5C1110088FB8C /* Set设置 */,
+				1CC4C4F21DED8D1E00DD6BB4 /* LXSearchViewController.h */,
+				1CC4C4F31DED8D1E00DD6BB4 /* LXSearchViewController.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		1CBDBC1E1DC5C08A0088FB8C /* 歌单 */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC231DC5C0FA0088FB8C /* Controller */,
+				1CBDBC251DC5C1040088FB8C /* View */,
+				1CBDBC241DC5C1020088FB8C /* Model */,
+			);
+			name = "歌单";
+			sourceTree = "<group>";
+		};
+		1CBDBC231DC5C0FA0088FB8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EB81DDAFEE800D75A7E /* LXSongMenuController.h */,
+				1C9E174B1DEAB09F0094D659 /* LXSongMenuController.m */,
+				1CFC17B01DE8016F0085C9DE /* LXSongMenuListController.h */,
+				1CFC17B11DE8016F0085C9DE /* LXSongMenuListController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CBDBC241DC5C1020088FB8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C7CD9181DE47CE500CE5F8A /* LXSongMenu.h */,
+				1C7CD9191DE47CE500CE5F8A /* LXSongMenu.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CBDBC251DC5C1040088FB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CAD281F1DFD78CC009C4223 /* LXSongMenuDescripView.h */,
+				1CAD28201DFD78CC009C4223 /* LXSongMenuDescripView.m */,
+				1C9627EF1DE6F78200489B67 /* LXSongMenuImageView.h */,
+				1C9627F01DE6F78200489B67 /* LXSongMenuImageView.m */,
+				1CF3A76F1DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.h */,
+				1CF3A7701DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m */,
+				1CCC35F41DFBEF7F006D4EC4 /* LXSongMenuListCell.h */,
+				1CCC35F51DFBEF7F006D4EC4 /* LXSongMenuListCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CBDBC261DC5C1110088FB8C /* Set设置 */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC291DC5C12D0088FB8C /* Controller */,
+				1CBDBC281DC5C12B0088FB8C /* View */,
+				1CBDBC271DC5C1290088FB8C /* Model */,
+			);
+			name = "Set设置";
+			sourceTree = "<group>";
+		};
+		1CBDBC271DC5C1290088FB8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CBDBC281DC5C12B0088FB8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CBDBC291DC5C12D0088FB8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC2D1DC5C1ED0088FB8C /* SetController.h */,
+				1CBDBC2E1DC5C1ED0088FB8C /* SetController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CCD70CF1DFE9B9700C3843E /* 我的音乐 */ = {
+			isa = PBXGroup;
+			children = (
+				1CCD70D21DFE9BBC00C3843E /* Model */,
+				1CCD70D11DFE9BB700C3843E /* View */,
+				1CCD70D01DFE9BAE00C3843E /* Controller */,
+			);
+			name = "我的音乐";
+			sourceTree = "<group>";
+		};
+		1CCD70D01DFE9BAE00C3843E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CCD70D31DFE9BEA00C3843E /* LXMyMusicViewController.h */,
+				1CCD70D41DFE9BEA00C3843E /* LXMyMusicViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CCD70D11DFE9BB700C3843E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CCD70D21DFE9BBC00C3843E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CF3A7651DE9668C0003FCB8 /* LXBlurViewTool */ = {
+			isa = PBXGroup;
+			children = (
+				1CF3A7661DE966BD0003FCB8 /* LXBlurViewTool.h */,
+				1CF3A7671DE966BD0003FCB8 /* LXBlurViewTool.m */,
+			);
+			name = LXBlurViewTool;
+			sourceTree = "<group>";
+		};
+		1CF3A7721DE9C6A90003FCB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CFC17C61DE870620085C9DE /* LXOperationView.h */,
+				1CFC17C71DE870620085C9DE /* LXOperationView.m */,
+				1CFC17C91DE875F60085C9DE /* LXTopView.h */,
+				1CFC17CA1DE875F60085C9DE /* LXTopView.m */,
+				1C9E17421DEA6C8A0094D659 /* LXTableViewCell.h */,
+				1C9E17431DEA6C8A0094D659 /* LXTableViewCell.m */,
+				1CECAFA01DEC3C7C0056A92A /* LXSectionView.h */,
+				1CECAFA11DEC3C7C0056A92A /* LXSectionView.m */,
+				1CECAFA61DEC52620056A92A /* LXSelectListTableViewCell.h */,
+				1CECAFA71DEC52620056A92A /* LXSelectListTableViewCell.m */,
+				1CECAFAC1DEC6C810056A92A /* LXNavigationListTableView.h */,
+				1CECAFAD1DEC6C810056A92A /* LXNavigationListTableView.m */,
+				1CECAFF11DEC7B0B0056A92A /* LXOrderTableView.h */,
+				1CECAFF21DEC7B0B0056A92A /* LXOrderTableView.m */,
+				1CC4C4F51DEDC25100DD6BB4 /* LXRightIndicater.h */,
+				1CC4C4F61DEDC25100DD6BB4 /* LXRightIndicater.m */,
+				1CC0EE6F1DF5A3C0000D6FE3 /* LXOperationSongView.h */,
+				1CC0EE701DF5A3C0000D6FE3 /* LXOperationSongView.m */,
+				1C6867A91DF6C18C00802426 /* LXMaskView.h */,
+				1C6867AA1DF6C18C00802426 /* LXMaskView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CFC17C01DE830770085C9DE /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				1C9627F21DE6F8DD00489B67 /* LXVerticalButton.h */,
+				1CFC17BD1DE830730085C9DE /* LXHorizontalButton.h */,
+				1C9627A81DE6BEAE00489B67 /* LXGradientButton.m */,
+				1CFC17BE1DE830730085C9DE /* LXHorizontalButton.m */,
+				1C9627F31DE6F8DD00489B67 /* LXVerticalButton.m */,
+				1C9627A71DE6BEAE00489B67 /* LXGradientButton.h */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		1CFC17C11DE830B00085C9DE /* Lable */ = {
+			isa = PBXGroup;
+			children = (
+				1C4331A01DCEF75800B668F4 /* LXScrollerLable.h */,
+				1C4331A11DCEF75800B668F4 /* LXScrollerLable.m */,
+			);
+			name = Lable;
+			sourceTree = "<group>";
+		};
+		1CFC17C21DE830BF0085C9DE /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				1C02920B1DD0A368004B4AA8 /* UIImage+LXImage.m */,
+				1C02920A1DD0A368004B4AA8 /* UIImage+LXImage.h */,
+			);
+			name = Catagory;
+			sourceTree = "<group>";
+		};
+		1CFC17C31DE830D10085C9DE /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				1C9627ED1DE6F21B00489B67 /* LXDatabase.m */,
+				1C9627EC1DE6F21B00489B67 /* LXDatabase.h */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
+		1CFC17C41DE830EE0085C9DE /* tabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC131DC5BFC10088FB8C /* LXtabbarItem.h */,
+				1CBDBC141DC5BFC50088FB8C /* LXtabbarItem.m */,
+				1CBDBC161DC5BFC90088FB8C /* LXtabbar.h */,
+				1CBDBC171DC5BFCC0088FB8C /* LXtabbar.m */,
+			);
+			name = tabBar;
+			sourceTree = "<group>";
+		};
+		1CFC17C51DE831170085C9DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CFC17AB1DE7FA390085C9DE /* LXHiddenNavigationBar.m */,
+				1CFC17AA1DE7FA390085C9DE /* LXHiddenNavigationBar.h */,
+				1CBDBC0F1DC5BFB20088FB8C /* LXnavigationController.h */,
+				1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */,
+				1CBDBC101DC5BFB80088FB8C /* LXtabbarViewController.h */,
+				1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */,
+				1CECAFA91DEC53AE0056A92A /* LXSelectListTableViewController.h */,
+				1CECAFAA1DEC53AE0056A92A /* LXSelectListTableViewController.m */,
+				1C6867AC1DF6E11E00802426 /* LXTableViewController.h */,
+				1C6867AD1DF6E11E00802426 /* LXTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CFE7EA41DDACA2900D75A7E /* 在线音乐 */ = {
+			isa = PBXGroup;
+			children = (
+				1CBDBC1E1DC5C08A0088FB8C /* 歌单 */,
+				1CFE7EBB1DDAFEF800D75A7E /* 榜单 */,
+				1CFE7EA81DDACB7800D75A7E /* 新曲 */,
+				1CFE7EA71DDACA6400D75A7E /* Model */,
+				1CFE7EA51DDACA5000D75A7E /* Controller */,
+				1CFE7EA61DDACA5A00D75A7E /* View */,
+			);
+			name = "在线音乐";
+			sourceTree = "<group>";
+		};
+		1CFE7EA51DDACA5000D75A7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EAC1DDACC6000D75A7E /* LXOnlineMusicController.h */,
+				1CFE7EAD1DDACC6000D75A7E /* LXOnlineMusicController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CFE7EA61DDACA5A00D75A7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CFE7EA71DDACA6400D75A7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CFE7EA81DDACB7800D75A7E /* 新曲 */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EB11DDACE2100D75A7E /* Model */,
+				1CFE7EB01DDACE1700D75A7E /* View */,
+				1CFE7EAF1DDACE0E00D75A7E /* Controller */,
+			);
+			name = "新曲";
+			sourceTree = "<group>";
+		};
+		1CFE7EAF1DDACE0E00D75A7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EB51DDAFEBC00D75A7E /* LXNewSongController.h */,
+				1CFE7EB61DDAFEBC00D75A7E /* LXNewSongController.m */,
+				1C9E17501DEAC7520094D659 /* LXRecommmandListViewController.h */,
+				1C9E17511DEAC7520094D659 /* LXRecommmandListViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CFE7EB01DDACE1700D75A7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C9E17561DEADB9A0094D659 /* LXAlbumHeaderView.h */,
+				1C9E17571DEADB9A0094D659 /* LXAlbumHeaderView.m */,
+				1C213C3A1DFCF6FB00ED098F /* LXOrderDetailCell.h */,
+				1C213C3B1DFCF6FB00ED098F /* LXOrderDetailCell.m */,
+				1CAD28221DFD7DDF009C4223 /* LXAlbumDescripView.h */,
+				1CAD28231DFD7DDF009C4223 /* LXAlbumDescripView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CFE7EB11DDACE2100D75A7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C9E174D1DEAB6120094D659 /* LXNewSong.h */,
+				1C9E174E1DEAB6120094D659 /* LXNewSong.m */,
+				1C9E17531DEACD650094D659 /* LXAlbum.h */,
+				1C9E17541DEACD650094D659 /* LXAlbum.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1CFE7EBB1DDAFEF800D75A7E /* 榜单 */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EBE1DDAFF1400D75A7E /* Model */,
+				1CFE7EBD1DDAFF0E00D75A7E /* View */,
+				1CFE7EBC1DDAFF0300D75A7E /* Controller */,
+			);
+			name = "榜单";
+			sourceTree = "<group>";
+		};
+		1CFE7EBC1DDAFF0300D75A7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7EBF1DDAFF2900D75A7E /* LXRankMenuController.h */,
+				1CFE7EC01DDAFF2900D75A7E /* LXRankMenuController.m */,
+				1CFC17B61DE8024A0085C9DE /* LXRankMenuListController.h */,
+				1CFC17B71DE8024A0085C9DE /* LXRankMenuListController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1CFE7EBD1DDAFF0E00D75A7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC35F01DFBE64A006D4EC4 /* LXRankListCell.h */,
+				1CCC35EE1DFBE644006D4EC4 /* LXRankListCell.m */,
+				1CFE7EC21DDB135E00D75A7E /* LXRankMenuCell.h */,
+				1CFE7EC31DDB135E00D75A7E /* LXRankMenuCell.m */,
+				1CFC17BA1DE82FCB0085C9DE /* LXRankMenuListHeaderView.h */,
+				1CFC17BB1DE82FCB0085C9DE /* LXRankMenuListHeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CFE7EBE1DDAFF1400D75A7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE7ECB1DDB1A4E00D75A7E /* LXSong.h */,
+				1CFE7ECC1DDB1A4E00D75A7E /* LXSong.m */,
+				1CF3A75F1DE920190003FCB8 /* LXRankMenu.h */,
+				1CF3A7601DE920190003FCB8 /* LXRankMenu.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		80A2B5B9FCA9E5D9DA8B082F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C9627E91DE6EDD900489B67 /* libsqlite3.0.tbd */,
+				1C02920D1DD0B47A004B4AA8 /* AVFoundation.framework */,
+				A14C18C15F9E1FF2334FAD80 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B32CA165AEA11E1A85F9CF3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				849803EDB8DD474D7DE23534 /* Pods.debug.xcconfig */,
+				30E1183B189EADA8911CA051 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CBDBBCE1DC5BED60088FB8C /* LRMusicAndNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CBDBBFC1DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNews" */;
+			buildPhases = (
+				DFF3C1CA006D1CDC2CD20179 /* Check Pods Manifest.lock */,
+				1CBDBBCB1DC5BED60088FB8C /* Sources */,
+				1CBDBBCC1DC5BED60088FB8C /* Frameworks */,
+				1CBDBBCD1DC5BED60088FB8C /* Resources */,
+				0AD4EA53D155B01AE9FA89DF /* Embed Pods Frameworks */,
+				B6E2CA29DFC96A146F4510DE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LRMusicAndNews;
+			productName = LRMusicAndNews;
+			productReference = 1CBDBBCF1DC5BED60088FB8C /* LRMusicAndNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1CBDBBE71DC5BED70088FB8C /* LRMusicAndNewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CBDBBFF1DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNewsTests" */;
+			buildPhases = (
+				1CBDBBE41DC5BED70088FB8C /* Sources */,
+				1CBDBBE51DC5BED70088FB8C /* Frameworks */,
+				1CBDBBE61DC5BED70088FB8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CBDBBEA1DC5BED70088FB8C /* PBXTargetDependency */,
+			);
+			name = LRMusicAndNewsTests;
+			productName = LRMusicAndNewsTests;
+			productReference = 1CBDBBE81DC5BED70088FB8C /* LRMusicAndNewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1CBDBBF21DC5BED70088FB8C /* LRMusicAndNewsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CBDBC021DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNewsUITests" */;
+			buildPhases = (
+				1CBDBBEF1DC5BED70088FB8C /* Sources */,
+				1CBDBBF01DC5BED70088FB8C /* Frameworks */,
+				1CBDBBF11DC5BED70088FB8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CBDBBF51DC5BED70088FB8C /* PBXTargetDependency */,
+			);
+			name = LRMusicAndNewsUITests;
+			productName = LRMusicAndNewsUITests;
+			productReference = 1CBDBBF31DC5BED70088FB8C /* LRMusicAndNewsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CBDBBC71DC5BED60088FB8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LX;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ***REMOVED***;
+				TargetAttributes = {
+					1CBDBBCE1DC5BED60088FB8C = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = UHCLK74DHB;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					1CBDBBE71DC5BED70088FB8C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 1CBDBBCE1DC5BED60088FB8C;
+					};
+					1CBDBBF21DC5BED70088FB8C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 1CBDBBCE1DC5BED60088FB8C;
+					};
+				};
+			};
+			buildConfigurationList = 1CBDBBCA1DC5BED60088FB8C /* Build configuration list for PBXProject "LRMusicAndNews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CBDBBC61DC5BED60088FB8C;
+			productRefGroup = 1CBDBBD01DC5BED60088FB8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CBDBBCE1DC5BED60088FB8C /* LRMusicAndNews */,
+				1CBDBBE71DC5BED70088FB8C /* LRMusicAndNewsTests */,
+				1CBDBBF21DC5BED70088FB8C /* LRMusicAndNewsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CBDBBCD1DC5BED60088FB8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CBDBBE21DC5BED70088FB8C /* LaunchScreen.storyboard in Resources */,
+				1CBDBBDF1DC5BED70088FB8C /* Assets.xcassets in Resources */,
+				1CBDBBDD1DC5BED70088FB8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBE61DC5BED70088FB8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBF11DC5BED70088FB8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AD4EA53D155B01AE9FA89DF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6E2CA29DFC96A146F4510DE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFF3C1CA006D1CDC2CD20179 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CBDBBCB1DC5BED60088FB8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CECAFF31DEC7B0B0056A92A /* LXOrderTableView.m in Sources */,
+				1CBDBC2F1DC5C1ED0088FB8C /* SetController.m in Sources */,
+				1C4C46FD1DE1CB7500FC7413 /* LXMusicOperationView.m in Sources */,
+				1CFC17B81DE8024A0085C9DE /* LXRankMenuListController.m in Sources */,
+				1CA738021DDB574800DA49DE /* LXPlayMusicController.m in Sources */,
+				1CFE7EC41DDB135E00D75A7E /* LXRankMenuCell.m in Sources */,
+				1C6867AB1DF6C18C00802426 /* LXMaskView.m in Sources */,
+				1CFC17B21DE8016F0085C9DE /* LXSongMenuListController.m in Sources */,
+				1C0D248A1E0271A2005302C9 /* LXLRC.m in Sources */,
+				1CFC17AC1DE7FA390085C9DE /* LXHiddenNavigationBar.m in Sources */,
+				1CFC17BC1DE82FCB0085C9DE /* LXRankMenuListHeaderView.m in Sources */,
+				1CBDBC181DC5BFCC0088FB8C /* LXtabbar.m in Sources */,
+				1CC0EE711DF5A3C0000D6FE3 /* LXOperationSongView.m in Sources */,
+				1C0D24871E025566005302C9 /* LXGetLRCData.m in Sources */,
+				1CBDBC121DC5BFBB0088FB8C /* LXtabbarViewController.m in Sources */,
+				1C9E17441DEA6C8A0094D659 /* LXTableViewCell.m in Sources */,
+				1C9627F41DE6F8DD00489B67 /* LXVerticalButton.m in Sources */,
+				1C9627EE1DE6F21B00489B67 /* LXDatabase.m in Sources */,
+				1CAD28241DFD7DDF009C4223 /* LXAlbumDescripView.m in Sources */,
+				1C206E8E1DE04D3200DF1B76 /* LXQueuePlayer.m in Sources */,
+				1C206E871DDF2CAB00DF1B76 /* LXPlayerMusicTool.m in Sources */,
+				1C4331A21DCEF75800B668F4 /* LXScrollerLable.m in Sources */,
+				1CFE7EAE1DDACC6000D75A7E /* LXOnlineMusicController.m in Sources */,
+				1CBDBC1B1DC5BFE50088FB8C /* AppDelegate.m in Sources */,
+				1CCC35EF1DFBE644006D4EC4 /* LXRankListCell.m in Sources */,
+				1CF3A7681DE966BD0003FCB8 /* LXBlurViewTool.m in Sources */,
+				1C9E17581DEADB9A0094D659 /* LXAlbumHeaderView.m in Sources */,
+				1C213C3C1DFCF6FB00ED098F /* LXOrderDetailCell.m in Sources */,
+				1CFE7EB71DDAFEBC00D75A7E /* LXNewSongController.m in Sources */,
+				1CFC17C81DE870620085C9DE /* LXOperationView.m in Sources */,
+				1CFC17BF1DE830730085C9DE /* LXHorizontalButton.m in Sources */,
+				1CECAFAB1DEC53AE0056A92A /* LXSelectListTableViewController.m in Sources */,
+				1C6867AE1DF6E11E00802426 /* LXTableViewController.m in Sources */,
+				1CC4C4F41DED8D1E00DD6BB4 /* LXSearchViewController.m in Sources */,
+				1CCC35F61DFBEF7F006D4EC4 /* LXSongMenuListCell.m in Sources */,
+				1CC4C4F71DEDC25100DD6BB4 /* LXRightIndicater.m in Sources */,
+				1CFE7ECD1DDB1A4E00D75A7E /* LXSong.m in Sources */,
+				1CAD28211DFD78CC009C4223 /* LXSongMenuDescripView.m in Sources */,
+				1C7CD91A1DE47CE500CE5F8A /* LXSongMenu.m in Sources */,
+				1CBDBBD41DC5BED60088FB8C /* main.m in Sources */,
+				1C0D248D1E027A79005302C9 /* LXImageContentView.m in Sources */,
+				1C9627A91DE6BEAE00489B67 /* LXGradientButton.m in Sources */,
+				1CBDBC151DC5BFC50088FB8C /* LXtabbarItem.m in Sources */,
+				1CF3A7711DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m in Sources */,
+				1C9E174F1DEAB6120094D659 /* LXNewSong.m in Sources */,
+				1CECAFA21DEC3C7C0056A92A /* LXSectionView.m in Sources */,
+				1CECAFA81DEC52620056A92A /* LXSelectListTableViewCell.m in Sources */,
+				1C9E17551DEACD650094D659 /* LXAlbum.m in Sources */,
+				1CCD70D51DFE9BEA00C3843E /* LXMyMusicViewController.m in Sources */,
+				1C02920C1DD0A368004B4AA8 /* UIImage+LXImage.m in Sources */,
+				1C9E174C1DEAB09F0094D659 /* LXSongMenuController.m in Sources */,
+				1C9E17521DEAC7520094D659 /* LXRecommmandListViewController.m in Sources */,
+				1CFE7EC11DDAFF2900D75A7E /* LXRankMenuController.m in Sources */,
+				1CF3A7611DE920190003FCB8 /* LXRankMenu.m in Sources */,
+				1CECAFAE1DEC6C810056A92A /* LXNavigationListTableView.m in Sources */,
+				1C9627F11DE6F78200489B67 /* LXSongMenuImageView.m in Sources */,
+				1CBDBC0E1DC5BFAE0088FB8C /* LXnavigationController.m in Sources */,
+				1CBE65B71DF40DAE005AB5C3 /* LXMusicTool.m in Sources */,
+				1CF17D1C1E018DE0005C2D53 /* LXLRCTableView.m in Sources */,
+				1CFC17CB1DE875F60085C9DE /* LXTopView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBE41DC5BED70088FB8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CBDBBED1DC5BED70088FB8C /* LRMusicAndNewsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CBDBBEF1DC5BED70088FB8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CBDBBF81DC5BED70088FB8C /* LRMusicAndNewsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CBDBBEA1DC5BED70088FB8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CBDBBCE1DC5BED60088FB8C /* LRMusicAndNews */;
+			targetProxy = 1CBDBBE91DC5BED70088FB8C /* PBXContainerItemProxy */;
+		};
+		1CBDBBF51DC5BED70088FB8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CBDBBCE1DC5BED60088FB8C /* LRMusicAndNews */;
+			targetProxy = 1CBDBBF41DC5BED70088FB8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1CBDBBDB1DC5BED70088FB8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CBDBBDC1DC5BED70088FB8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1CBDBBE01DC5BED70088FB8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CBDBBE11DC5BED70088FB8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CBDBBFA1DC5BED70088FB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1CBDBBFB1DC5BED70088FB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CBDBBFD1DC5BED70088FB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 849803EDB8DD474D7DE23534 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
+				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		1CBDBBFE1DC5BED70088FB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30E1183B189EADA8911CA051 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
+				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		1CBDBC001DC5BED70088FB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LRMusicAndNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LRMusicAndNews.app/LRMusicAndNews";
+			};
+			name = Debug;
+		};
+		1CBDBC011DC5BED70088FB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LRMusicAndNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LRMusicAndNews.app/LRMusicAndNews";
+			};
+			name = Release;
+		};
+		1CBDBC031DC5BED70088FB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LRMusicAndNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LRMusicAndNews;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1CBDBC041DC5BED70088FB8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LRMusicAndNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LRMusicAndNews;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CBDBBCA1DC5BED60088FB8C /* Build configuration list for PBXProject "LRMusicAndNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CBDBBFA1DC5BED70088FB8C /* Debug */,
+				1CBDBBFB1DC5BED70088FB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CBDBBFC1DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CBDBBFD1DC5BED70088FB8C /* Debug */,
+				1CBDBBFE1DC5BED70088FB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CBDBBFF1DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CBDBC001DC5BED70088FB8C /* Debug */,
+				1CBDBC011DC5BED70088FB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CBDBC021DC5BED70088FB8C /* Build configuration list for PBXNativeTarget "LRMusicAndNewsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CBDBC031DC5BED70088FB8C /* Debug */,
+				1CBDBC041DC5BED70088FB8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CBDBBC71DC5BED60088FB8C /* Project object */;
+}
