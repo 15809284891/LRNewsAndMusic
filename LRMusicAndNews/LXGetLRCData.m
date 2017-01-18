@@ -25,7 +25,7 @@
     
     NSString *cachePayh = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject];
     NSString *savePath = [cachePayh stringByAppendingString:song.songName];
-    
+    NSLog(@"%@",savePath);
     BOOL result = [[NSFileManager defaultManager]fileExistsAtPath:savePath];
     if (result) {
         NSString *str = [NSString stringWithContentsOfFile:savePath encoding:NSUTF8StringEncoding error:nil];

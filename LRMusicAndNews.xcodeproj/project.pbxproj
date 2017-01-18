@@ -75,6 +75,7 @@
 		1CFE7EC41DDB135E00D75A7E /* LXRankMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EC31DDB135E00D75A7E /* LXRankMenuCell.m */; };
 		1CFE7ECD1DDB1A4E00D75A7E /* LXSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7ECC1DDB1A4E00D75A7E /* LXSong.m */; };
 		3582BB35AD8A9883C8E5585B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C18C15F9E1FF2334FAD80 /* libPods.a */; };
+		E9BDC8A81E2DF18B00C704F4 /* LXDownLoadSong.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDC8A71E2DF18B00C704F4 /* LXDownLoadSong.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,8 @@
 		30E1183B189EADA8911CA051 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		849803EDB8DD474D7DE23534 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A14C18C15F9E1FF2334FAD80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9BDC8A61E2DF18B00C704F4 /* LXDownLoadSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDownLoadSong.h; sourceTree = "<group>"; };
+		E9BDC8A71E2DF18B00C704F4 /* LXDownLoadSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDownLoadSong.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 			children = (
 				1C0D24851E025566005302C9 /* LXGetLRCData.h */,
 				1C0D24861E025566005302C9 /* LXGetLRCData.m */,
+				E9BDC8A61E2DF18B00C704F4 /* LXDownLoadSong.h */,
+				E9BDC8A71E2DF18B00C704F4 /* LXDownLoadSong.m */,
 			);
 			name = tool;
 			sourceTree = "<group>";
@@ -982,6 +987,7 @@
 				1CECAFF31DEC7B0B0056A92A /* LXOrderTableView.m in Sources */,
 				1CBDBC2F1DC5C1ED0088FB8C /* SetController.m in Sources */,
 				1C4C46FD1DE1CB7500FC7413 /* LXMusicOperationView.m in Sources */,
+				E9BDC8A81E2DF18B00C704F4 /* LXDownLoadSong.m in Sources */,
 				1CFC17B81DE8024A0085C9DE /* LXRankMenuListController.m in Sources */,
 				1CA738021DDB574800DA49DE /* LXPlayMusicController.m in Sources */,
 				1CFE7EC41DDB135E00D75A7E /* LXRankMenuCell.m in Sources */,

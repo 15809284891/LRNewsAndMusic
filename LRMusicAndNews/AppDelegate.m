@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "LXOnlineMusicController.h"
 #import "LXtabbarViewController.h"
+#import <AFNetworkActivityIndicatorManager.h>
 @interface AppDelegate ()
 {
     UIBackgroundTaskIdentifier _bg_TakID;
@@ -23,15 +24,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 //    LXnavigationController*nav = [[LXnavigationController alloc]initWithRootViewController:[[LXOnlineMusicController alloc]init]];
+//    [AFNetworkingactivi]
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     self.window.rootViewController = [[LXtabbarViewController alloc]init];
     [self.window makeKeyAndVisible];
-    //后台播放
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord
-             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
-                   error:nil];
-
-
+   
     return YES;
 }
 

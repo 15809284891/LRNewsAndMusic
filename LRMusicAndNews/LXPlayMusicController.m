@@ -17,6 +17,8 @@
 #import "LXLRCTableView.h"
 #import "LXGetLRCData.h"
 #import "LXImageContentView.h"
+#import "LXHorizontalButton.h"
+#import "LXDownLoadSong.h"
 @interface LXPlayMusicController ()<LXmusicOperarionDelegate,LXPlayerMusicToolDelegate,LXImageContentViewDelegate,LXLRCTableViewDelegate>
 @property (nonatomic,strong)LXImageContentView *ImageContentView;
 @property (nonatomic,strong)LXMusicOperationView *operationView;
@@ -122,6 +124,11 @@
     [self setupSliderAndProgress];
     //请求数据
     [self requestSongData];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadLRCTable:) name:@"loadLRC" object:nil];
+}
+-(void)reloadLRCTable:(NSNotification *)noticy{
+    NSArray *array = (NSArray *)(noticy.object);
+    self.lrcTable.lrcArray = array;
 }
 -(void)setUpBlurView{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth, ViewHeight)];
@@ -170,6 +177,7 @@
     }];
     LXGetLRCData   *data = [[LXGetLRCData alloc]init];
     [data   getLRCarray:self.song :^(NSArray *lrcArray) {
+//        NSLog(@"------%@",[NSThread currentThread]);
         lrcT.lrcArray  = lrcArray;
     }];
 }
@@ -180,7 +188,13 @@
    }];
 }
 -(void)LXImageContentViewClickButton:(LXHorizontalButton *)button{
-    NSLog(@"%@",button);
+//    NSLog(@"%ld",button.tag);
+    if (button.tag == 1) {
+        NSLog(@"下载");
+        LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
+        LXDownLoadSong *downloadSong = [[LXDownLoadSong alloc]init];
+        [downloadSong downFileWithURL:tool.playingMusic.showLink];
+    }
 }
 #pragma mark  -LXmusicOperarionDelegate
 -(void)addButtonTarget:(UIButton *)sender{
@@ -211,6 +225,7 @@
         LXSong *song = [_playMusicTool nextMusic];
         _song.song_id = song.song_id;
         [self requestSongData];
+       
     }
     //随机
     else if(sender.tag == 105){

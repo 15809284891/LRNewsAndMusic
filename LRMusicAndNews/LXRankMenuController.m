@@ -51,6 +51,7 @@ static  NSString *idenity = @"songRankCell";
  */
 -(void)requestRankMenuData{
     [[AFHTTPSessionManager manager] POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.billboard.billCategory",@"kflag":@"1") success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"2222222222222%@",responseObject);
        _rankMenus = [LXRankMenu mj_objectArrayWithKeyValuesArray:responseObject[@"content"]];
         for (int i = 0; i<_rankMenus.count; i++) {
             LXRankMenu *rankMenu = _rankMenus[i];

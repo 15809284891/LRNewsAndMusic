@@ -61,6 +61,7 @@ int currentRow =0 ;
 }
 -(void)setLrcArray:(NSArray *)lrcArray{
     _lrcArray = lrcArray;
+    NSLog(@"1111111111  %@",[NSThread currentThread]);
     [self.tableView reloadData];
 }
 -(void)seupTableView{

@@ -77,6 +77,7 @@
  *  播放链接
  */
 @property (nonatomic,copy)NSString *showLink;
+//@property (nonatomic,copy)NSString *lrclink;
 /**
  *  大小
  */
@@ -136,4 +137,5 @@
 @property (nonatomic,copy) NSString *publishtime;
 @property (nonatomic,copy) NSString *ting_uid;
 @property (nonatomic,assign)BOOL isSelected;
+@property (nonatomic,assign )CGFloat cacheProgress;
 @end

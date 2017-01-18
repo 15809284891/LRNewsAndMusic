@@ -10,17 +10,27 @@
 #import <AVFoundation/AVFoundation.h>
 #import "LXSong.h"
 #import "LXQueuePlayer.h"
+#import "LXLRCTableView.h"
+#import "LXGetLRCData.h"
+
 @interface LXPlayerMusicTool ()
 @property (nonatomic,assign)CGFloat cacheProgress;
 @end
 
-static NSMutableDictionary *_musicPlayers;
+static NSMutableDictionary *_musicPlayers;//缓存被播放过的歌曲
 static LXPlayerMusicTool *_musicPlay=nil;
+static NSMutableDictionary *_cacheProgressDic;
 @implementation LXPlayerMusicTool
 
 + (void)initialize
 {
-     _musicPlayers = [NSMutableDictionary dictionary];
+    //后台播放
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                   error:nil];
+    //会话激活
+    [session setActive:YES error:nil];
 }
 +(LXPlayerMusicTool *)shareMusicPlay{
 
@@ -43,25 +53,33 @@ static LXPlayerMusicTool *_musicPlay=nil;
 }
 ////自定义初始化方法
 -(instancetype)init{
-    if (self = [super init]) {
-        NSLog(@"调用我的次数");
-        //监听播放结束
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(endAction:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-        //监听中断
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterreption:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
-         }
-        return self;
+    __block  LXPlayerMusicTool*weakSelf = self;
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        if ((weakSelf = [super init])!=nil) {
+            _musicPlayers = [NSMutableDictionary dictionary];
+            _cacheProgressDic = [NSMutableDictionary dictionary];
+            //监听播放结束
+            [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(endAction:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+            //监听中断
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterreption:) name:AVAudioSessionInterruptionNotification object:[AVAudioSession sharedInstance]];
+        }
+    });
+
+    self = weakSelf;
+    return self;
 }
 //覆盖该方法主要确保当用户通过copy方法产生对象时对象的唯一性
 -(id)copy{
     return self;
 }
-//覆盖该方法主要确保用户听过mutableCopy方法产生对象时对象的唯一性
+//覆盖该方法主要确保用户通过mutableCopy方法产生对象时对象的唯一性
 -(id)mutableCopy{
     return self;
 }
 //准备播放
 -(void)preparePlayMusicWithURLStr:(LXSong*)song{
+    
     LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
     //判断当前是否有播放的歌曲，
     if (queuePlayer.currentItem) {
@@ -85,9 +103,11 @@ static LXPlayerMusicTool *_musicPlay=nil;
     //没有正在播放的歌曲
     else{
         NSLog(@"没有正在播放的歌曲");
-            self.timer = nil;
+
+        self.timer = nil;
         [self addNewPlayerItem:song];
-            }
+    }
+   
 }
 -(void)addNewPlayerItem:(LXSong *)song{
     LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
@@ -103,6 +123,7 @@ static LXPlayerMusicTool *_musicPlay=nil;
 //播放歌曲
 -(void)beginPlayMusic{
       NSLog(@"-开始播放了");
+    
     //给当前对象添加监听者，监听播放进度
     if (self.timer==nil) {
           [self addCurrentTimeTimer];
@@ -111,6 +132,10 @@ static LXPlayerMusicTool *_musicPlay=nil;
     [queuePlayer play];
     //播放后专辑开始旋转
     [[NSNotificationCenter defaultCenter]postNotificationName:@"startRotating" object:nil];
+    LXGetLRCData *lrcData = [[LXGetLRCData alloc]init];
+    [lrcData getLRCarray:self.playingMusic :^(NSArray *lrcArray) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"loadLRC" object:lrcArray];
+    }];
 }
 
 //获取当前播放时间
@@ -169,12 +194,12 @@ static LXPlayerMusicTool *_musicPlay=nil;
 }
 //跳转到某个地方
 -(void)seekToTimeWithValue:(CGFloat)value{
-    NSLog(@" ----------------  %lf",value);
+//    NSLog(@" ----------------  %lf",value);
     NSArray *array = [self.playingMusic.showLink componentsSeparatedByString:@"?"];
     NSString *str = array[0];
     [self pauseWithURLStr:str];
     LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
-    NSLog(@"11111       %lf",value*[self getTotleTime]);
+//    NSLog(@"11111       %lf",value*[self getTotleTime]);
     [queuePlayer seekToTime:CMTimeMake(value*[self getTotleTime], 1)  completionHandler:^(BOOL finished) {
         if (finished == YES) {
             [self preparePlayMusicWithURLStr:_playingMusic];
@@ -238,16 +263,32 @@ static LXPlayerMusicTool *_musicPlay=nil;
     }
     AVPlayerItem * songItem = object;
     if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-        LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
-        AVPlayerItem  *playerItem = queuePlayer.currentItem;
-        NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
-        CMTime duration = playerItem.duration;
-        CGFloat totalDuration = CMTimeGetSeconds(duration);
-        self.cacheProgress  = timeInterval /totalDuration;
-        NSLog(@"%f",_cacheProgress);
+//        NSLog(@"%lf",self.playingMusic.cacheProgress);
+//        NSLog(@"%@",self.playingMusic.songName);
+        if (_cacheProgressDic[self.playingMusic.songName]) {
+            self.cacheProgress = [_cacheProgressDic[self.playingMusic.songName] floatValue];
+//            NSLog(@"if %lf",self.cacheProgress);
+        }
+        else{
+            LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
+            AVPlayerItem  *playerItem = queuePlayer.currentItem;
+            NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
+            CMTime duration = playerItem.duration;
+            CGFloat totalDuration = CMTimeGetSeconds(duration);
+            self.cacheProgress  = timeInterval /totalDuration;
+        if (self.cacheProgress-1>=0.00) {
+            _cacheProgressDic[self.playingMusic.songName] = @(self.cacheProgress);
+
+        }
+            //            NSLog(@"%f",_cacheProgress);
+//            NSLog(@"else %lf",self.cacheProgress);/
+            
+        }
         [self.delegate getCacheProgress:self.cacheProgress];
     }
 }
+
+
 - (NSTimeInterval)availableDuration {
     LXQueuePlayer *queuePlayer = [LXQueuePlayer shareQueuePlayer];
     AVPlayerItem  *playerItem = queuePlayer.currentItem;
@@ -256,6 +297,7 @@ static LXPlayerMusicTool *_musicPlay=nil;
     float startSeconds = CMTimeGetSeconds(timeRange.start);
     float durationSeconds = CMTimeGetSeconds(timeRange.duration);
     NSTimeInterval result = startSeconds + durationSeconds;// 计算缓冲总进度
+//    NSLog(@"result  %lf",startSeconds);
     return result;
 }
 -(void)endAction:(NSNotification *)noticy{

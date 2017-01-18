@@ -34,6 +34,7 @@
 @property (nonatomic,strong)NSString *tagStr;
 @property (nonatomic,strong)LXMaskView *maskView;
 @property (nonatomic,strong)LXOperationSongView *operationSongView;
+@property (nonatomic,strong)LXSong *operationSong;
 //记录tableView是上滑还是下滑
 @property (nonatomic,assign)CGFloat oldOffset;
 @property (nonatomic ,strong)NSMutableArray   *groupArray;
@@ -425,15 +426,16 @@ static NSIndexPath *selectedIndexPath;
 
 
 #pragma mark - LXTableViewCellDelegate
--(void)cellListClickEvent:(UIButton *)btn{
+-(void)cellListClickEvent:(UIButton *)btn:(LXSong *)song{
+    self.operationSong =song;
     btn.selected = !btn.selected;
     CGPoint point = btn.center;
     point = [self.tableView convertPoint:point fromView:btn.superview];
     NSIndexPath* indexpath = [self.tableView indexPathForRowAtPoint:point];
     selectedIndexPath = indexpath;
     if (btn.selected) {
-        self.operationSongView.images = @[@"next-gray",@"add-gray",@"share-gray",@"love-gray",@"download-gray"];
-        self.operationSongView.titles = @[@"下一首",@"添加",@"分享",@"收藏",@"下载"];
+        self.operationSongView.images = @[@"next-gray",@"add-gray",@"share-gray",@"love-gray"];
+        self.operationSongView.titles = @[@"下一首",@"添加",@"分享",@"收藏"];
         self.operationSongView.clos = 4;
         self.operationSongView.width =60;
         self.operationSongView.height = 80;
@@ -462,6 +464,9 @@ static NSIndexPath *selectedIndexPath;
     }
     else if([title isEqualToString:@"下载"]){
         NSLog(@"下载");
+//        NSLog(@"%@",_operationSong.lrclink);
+        
+       
     }
     else if([title isEqualToString:@"收藏"]){
         NSLog(@"收藏");

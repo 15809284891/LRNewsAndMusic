@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class LXSong;
 @protocol LXTableViewCellDelegate <NSObject>
--(void)cellListClickEvent:(UIButton *)btn;
+-(void)cellListClickEvent:(UIButton *)btn:(LXSong *)song;
 @end
 @interface LXTableViewCell : UITableViewCell
 @property (nonatomic,strong)LXSong *song;

@@ -30,6 +30,7 @@
   
     for (int i = 0; i<self.images.count; i++) {
         LXHorizontalButton *button = [[LXHorizontalButton alloc]init];
+        button.tag = i;
         [button setImage:[UIImage imageNamed:self.images[i]] forState:UIControlStateNormal];
         [button setTitle:self.titles[i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];

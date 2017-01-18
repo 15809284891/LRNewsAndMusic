@@ -109,7 +109,7 @@
     }];
 }
 -(void)cellListClick:(UIButton *)sender{
-    [self.delegate cellListClickEvent:sender];
+    [self.delegate cellListClickEvent:sender :self.song];
 }
 @end
 
