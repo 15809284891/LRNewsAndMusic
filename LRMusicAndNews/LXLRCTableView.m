@@ -28,6 +28,7 @@ int currentRow =0 ;
         NSArray *arr1 = [_currentTime componentsSeparatedByString:@":"];
         CGFloat currentTime1 = [arr1[0] integerValue]*60 + [arr1[1] floatValue];
         int index;
+        
         for (int i = currentRow; i<self.lrcArray.count; i++) {
             LXLRC *lrc = self.lrcArray[i];
             if (lrc.time.length<=0) {
@@ -46,8 +47,10 @@ int currentRow =0 ;
                 break;
             }
         }
-        [self.tableView reloadData];
+        NSLog(@"---------%d",currentRow);
+       
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:currentRow inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+//         [self.tableView reloadData];
     }
    
 }
@@ -61,6 +64,7 @@ int currentRow =0 ;
 }
 -(void)setLrcArray:(NSArray *)lrcArray{
     _lrcArray = lrcArray;
+    NSLog(@"%ld",lrcArray.count);
     NSLog(@"1111111111  %@",[NSThread currentThread]);
     [self.tableView reloadData];
 }
@@ -98,6 +102,7 @@ int currentRow =0 ;
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"count  %ld",_lrcArray.count);
     return _lrcArray.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

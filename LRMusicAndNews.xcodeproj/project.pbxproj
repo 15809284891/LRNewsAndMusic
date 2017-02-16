@@ -13,7 +13,6 @@
 		1C0D248A1E0271A2005302C9 /* LXLRC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D24891E0271A2005302C9 /* LXLRC.m */; };
 		1C0D248D1E027A79005302C9 /* LXImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0D248C1E027A79005302C9 /* LXImageContentView.m */; };
 		1C206E871DDF2CAB00DF1B76 /* LXPlayerMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */; };
-		1C206E8E1DE04D3200DF1B76 /* LXQueuePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */; };
 		1C213C3C1DFCF6FB00ED098F /* LXOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C213C3B1DFCF6FB00ED098F /* LXOrderDetailCell.m */; };
 		1C4331A21DCEF75800B668F4 /* LXScrollerLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4331A11DCEF75800B668F4 /* LXScrollerLable.m */; };
 		1C4C46FD1DE1CB7500FC7413 /* LXMusicOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C46FC1DE1CB7500FC7413 /* LXMusicOperationView.m */; };
@@ -40,8 +39,8 @@
 		1CBDBBE21DC5BED70088FB8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBDBBE01DC5BED70088FB8C /* LaunchScreen.storyboard */; };
 		1CBDBBED1DC5BED70088FB8C /* LRMusicAndNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBBEC1DC5BED70088FB8C /* LRMusicAndNewsTests.m */; };
 		1CBDBBF81DC5BED70088FB8C /* LRMusicAndNewsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBBF71DC5BED70088FB8C /* LRMusicAndNewsUITests.m */; };
-		1CBDBC0E1DC5BFAE0088FB8C /* LXnavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */; };
-		1CBDBC121DC5BFBB0088FB8C /* LXtabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */; };
+		1CBDBC0E1DC5BFAE0088FB8C /* LXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC0D1DC5BFAE0088FB8C /* LXNavigationController.m */; };
+		1CBDBC121DC5BFBB0088FB8C /* LXTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC111DC5BFBB0088FB8C /* LXTabBarViewController.m */; };
 		1CBDBC151DC5BFC50088FB8C /* LXtabbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC141DC5BFC50088FB8C /* LXtabbarItem.m */; };
 		1CBDBC181DC5BFCC0088FB8C /* LXtabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC171DC5BFCC0088FB8C /* LXtabbar.m */; };
 		1CBDBC1B1DC5BFE50088FB8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDBC1A1DC5BFE50088FB8C /* AppDelegate.m */; };
@@ -75,7 +74,12 @@
 		1CFE7EC41DDB135E00D75A7E /* LXRankMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7EC31DDB135E00D75A7E /* LXRankMenuCell.m */; };
 		1CFE7ECD1DDB1A4E00D75A7E /* LXSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE7ECC1DDB1A4E00D75A7E /* LXSong.m */; };
 		3582BB35AD8A9883C8E5585B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A14C18C15F9E1FF2334FAD80 /* libPods.a */; };
+		E934436B1E305B110050C412 /* 告白气球.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E934436A1E305B110050C412 /* 告白气球.mp3 */; };
+		E9B74EE71E31902300D08477 /* LXDownLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B74EE61E31902300D08477 /* LXDownLoadCell.m */; };
+		E9B74EEA1E319A9300D08477 /* LXDownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B74EE91E319A9300D08477 /* LXDownLoadTool.m */; };
 		E9BDC8A81E2DF18B00C704F4 /* LXDownLoadSong.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDC8A71E2DF18B00C704F4 /* LXDownLoadSong.m */; };
+		E9BF49C41E32EBA8001AAF38 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF49C31E32EBA8001AAF38 /* MediaPlayer.framework */; };
+		E9D6E0A51E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D6E0A41E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +111,6 @@
 		1C0D248C1E027A79005302C9 /* LXImageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXImageContentView.m; sourceTree = "<group>"; };
 		1C206E851DDF2CAB00DF1B76 /* LXPlayerMusicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXPlayerMusicTool.h; sourceTree = "<group>"; };
 		1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPlayerMusicTool.m; sourceTree = "<group>"; };
-		1C206E8C1DE04D3200DF1B76 /* LXQueuePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXQueuePlayer.h; sourceTree = "<group>"; };
-		1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXQueuePlayer.m; sourceTree = "<group>"; };
 		1C213C3A1DFCF6FB00ED098F /* LXOrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXOrderDetailCell.h; sourceTree = "<group>"; };
 		1C213C3B1DFCF6FB00ED098F /* LXOrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXOrderDetailCell.m; sourceTree = "<group>"; };
 		1C37E2971DD852520037A74F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -161,10 +163,10 @@
 		1CBDBBF31DC5BED70088FB8C /* LRMusicAndNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LRMusicAndNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBDBBF71DC5BED70088FB8C /* LRMusicAndNewsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRMusicAndNewsUITests.m; sourceTree = "<group>"; };
 		1CBDBBF91DC5BED70088FB8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXnavigationController.m; sourceTree = "<group>"; };
-		1CBDBC0F1DC5BFB20088FB8C /* LXnavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXnavigationController.h; sourceTree = "<group>"; };
-		1CBDBC101DC5BFB80088FB8C /* LXtabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbarViewController.h; sourceTree = "<group>"; };
-		1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXtabbarViewController.m; sourceTree = "<group>"; };
+		1CBDBC0D1DC5BFAE0088FB8C /* LXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNavigationController.m; sourceTree = "<group>"; };
+		1CBDBC0F1DC5BFB20088FB8C /* LXNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXNavigationController.h; sourceTree = "<group>"; };
+		1CBDBC101DC5BFB80088FB8C /* LXTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTabBarViewController.h; sourceTree = "<group>"; };
+		1CBDBC111DC5BFBB0088FB8C /* LXTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTabBarViewController.m; sourceTree = "<group>"; };
 		1CBDBC131DC5BFC10088FB8C /* LXtabbarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbarItem.h; sourceTree = "<group>"; };
 		1CBDBC141DC5BFC50088FB8C /* LXtabbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXtabbarItem.m; sourceTree = "<group>"; };
 		1CBDBC161DC5BFC90088FB8C /* LXtabbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXtabbar.h; sourceTree = "<group>"; };
@@ -234,8 +236,16 @@
 		30E1183B189EADA8911CA051 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		849803EDB8DD474D7DE23534 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A14C18C15F9E1FF2334FAD80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E934436A1E305B110050C412 /* 告白气球.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "告白气球.mp3"; sourceTree = "<group>"; };
+		E9B74EE51E31902300D08477 /* LXDownLoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDownLoadCell.h; sourceTree = "<group>"; };
+		E9B74EE61E31902300D08477 /* LXDownLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDownLoadCell.m; sourceTree = "<group>"; };
+		E9B74EE81E319A9300D08477 /* LXDownLoadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDownLoadTool.h; sourceTree = "<group>"; };
+		E9B74EE91E319A9300D08477 /* LXDownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDownLoadTool.m; sourceTree = "<group>"; };
 		E9BDC8A61E2DF18B00C704F4 /* LXDownLoadSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDownLoadSong.h; sourceTree = "<group>"; };
 		E9BDC8A71E2DF18B00C704F4 /* LXDownLoadSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDownLoadSong.m; sourceTree = "<group>"; };
+		E9BF49C31E32EBA8001AAF38 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E9D6E0A31E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXSongMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		E9D6E0A41E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXSongMenuCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9BF49C41E32EBA8001AAF38 /* MediaPlayer.framework in Frameworks */,
 				1C9627EA1DE6EDD900489B67 /* libsqlite3.0.tbd in Frameworks */,
 				1C02920E1DD0B47A004B4AA8 /* AVFoundation.framework in Frameworks */,
 				3582BB35AD8A9883C8E5585B /* libPods.a in Frameworks */,
@@ -282,8 +293,6 @@
 			children = (
 				1C206E851DDF2CAB00DF1B76 /* LXPlayerMusicTool.h */,
 				1C206E861DDF2CAB00DF1B76 /* LXPlayerMusicTool.m */,
-				1C206E8C1DE04D3200DF1B76 /* LXQueuePlayer.h */,
-				1C206E8D1DE04D3200DF1B76 /* LXQueuePlayer.m */,
 				1CBE65B51DF40DAE005AB5C3 /* LXMusicTool.h */,
 				1CBE65B61DF40DAE005AB5C3 /* LXMusicTool.m */,
 			);
@@ -399,6 +408,7 @@
 		1CBDBC051DC5BF5E0088FB8C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				E934436A1E305B110050C412 /* 告白气球.mp3 */,
 				1CF3A7651DE9668C0003FCB8 /* LXBlurViewTool */,
 				1CFC17C31DE830D10085C9DE /* DataBase */,
 				1CFC17C21DE830BF0085C9DE /* Catagory */,
@@ -477,6 +487,8 @@
 				1CF3A7701DE9BBCB0003FCB8 /* LXSongMenuTableHeaderView.m */,
 				1CCC35F41DFBEF7F006D4EC4 /* LXSongMenuListCell.h */,
 				1CCC35F51DFBEF7F006D4EC4 /* LXSongMenuListCell.m */,
+				E9D6E0A31E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.h */,
+				E9D6E0A41E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -536,6 +548,8 @@
 		1CCD70D11DFE9BB700C3843E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E9B74EE51E31902300D08477 /* LXDownLoadCell.h */,
+				E9B74EE61E31902300D08477 /* LXDownLoadCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -543,6 +557,8 @@
 		1CCD70D21DFE9BBC00C3843E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9B74EE81E319A9300D08477 /* LXDownLoadTool.h */,
+				E9B74EE91E319A9300D08477 /* LXDownLoadTool.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -639,10 +655,10 @@
 			children = (
 				1CFC17AB1DE7FA390085C9DE /* LXHiddenNavigationBar.m */,
 				1CFC17AA1DE7FA390085C9DE /* LXHiddenNavigationBar.h */,
-				1CBDBC0F1DC5BFB20088FB8C /* LXnavigationController.h */,
-				1CBDBC0D1DC5BFAE0088FB8C /* LXnavigationController.m */,
-				1CBDBC101DC5BFB80088FB8C /* LXtabbarViewController.h */,
-				1CBDBC111DC5BFBB0088FB8C /* LXtabbarViewController.m */,
+				1CBDBC0F1DC5BFB20088FB8C /* LXNavigationController.h */,
+				1CBDBC0D1DC5BFAE0088FB8C /* LXNavigationController.m */,
+				1CBDBC101DC5BFB80088FB8C /* LXTabBarViewController.h */,
+				1CBDBC111DC5BFBB0088FB8C /* LXTabBarViewController.m */,
 				1CECAFA91DEC53AE0056A92A /* LXSelectListTableViewController.h */,
 				1CECAFAA1DEC53AE0056A92A /* LXSelectListTableViewController.m */,
 				1C6867AC1DF6E11E00802426 /* LXTableViewController.h */,
@@ -780,6 +796,7 @@
 		80A2B5B9FCA9E5D9DA8B082F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9BF49C31E32EBA8001AAF38 /* MediaPlayer.framework */,
 				1C9627E91DE6EDD900489B67 /* libsqlite3.0.tbd */,
 				1C02920D1DD0B47A004B4AA8 /* AVFoundation.framework */,
 				A14C18C15F9E1FF2334FAD80 /* libPods.a */,
@@ -867,7 +884,6 @@
 				TargetAttributes = {
 					1CBDBBCE1DC5BED60088FB8C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = UHCLK74DHB;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -909,6 +925,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E934436B1E305B110050C412 /* 告白气球.mp3 in Resources */,
 				1CBDBBE21DC5BED70088FB8C /* LaunchScreen.storyboard in Resources */,
 				1CBDBBDF1DC5BED70088FB8C /* Assets.xcassets in Resources */,
 				1CBDBBDD1DC5BED70088FB8C /* Main.storyboard in Resources */,
@@ -999,12 +1016,12 @@
 				1CBDBC181DC5BFCC0088FB8C /* LXtabbar.m in Sources */,
 				1CC0EE711DF5A3C0000D6FE3 /* LXOperationSongView.m in Sources */,
 				1C0D24871E025566005302C9 /* LXGetLRCData.m in Sources */,
-				1CBDBC121DC5BFBB0088FB8C /* LXtabbarViewController.m in Sources */,
+				1CBDBC121DC5BFBB0088FB8C /* LXTabBarViewController.m in Sources */,
 				1C9E17441DEA6C8A0094D659 /* LXTableViewCell.m in Sources */,
+				E9D6E0A51E36DB3E0015A7BA /* LXSongMenuCollectionViewCell.m in Sources */,
 				1C9627F41DE6F8DD00489B67 /* LXVerticalButton.m in Sources */,
 				1C9627EE1DE6F21B00489B67 /* LXDatabase.m in Sources */,
 				1CAD28241DFD7DDF009C4223 /* LXAlbumDescripView.m in Sources */,
-				1C206E8E1DE04D3200DF1B76 /* LXQueuePlayer.m in Sources */,
 				1C206E871DDF2CAB00DF1B76 /* LXPlayerMusicTool.m in Sources */,
 				1C4331A21DCEF75800B668F4 /* LXScrollerLable.m in Sources */,
 				1CFE7EAE1DDACC6000D75A7E /* LXOnlineMusicController.m in Sources */,
@@ -1034,6 +1051,7 @@
 				1CECAFA81DEC52620056A92A /* LXSelectListTableViewCell.m in Sources */,
 				1C9E17551DEACD650094D659 /* LXAlbum.m in Sources */,
 				1CCD70D51DFE9BEA00C3843E /* LXMyMusicViewController.m in Sources */,
+				E9B74EEA1E319A9300D08477 /* LXDownLoadTool.m in Sources */,
 				1C02920C1DD0A368004B4AA8 /* UIImage+LXImage.m in Sources */,
 				1C9E174C1DEAB09F0094D659 /* LXSongMenuController.m in Sources */,
 				1C9E17521DEAC7520094D659 /* LXRecommmandListViewController.m in Sources */,
@@ -1041,10 +1059,11 @@
 				1CF3A7611DE920190003FCB8 /* LXRankMenu.m in Sources */,
 				1CECAFAE1DEC6C810056A92A /* LXNavigationListTableView.m in Sources */,
 				1C9627F11DE6F78200489B67 /* LXSongMenuImageView.m in Sources */,
-				1CBDBC0E1DC5BFAE0088FB8C /* LXnavigationController.m in Sources */,
+				1CBDBC0E1DC5BFAE0088FB8C /* LXNavigationController.m in Sources */,
 				1CBE65B71DF40DAE005AB5C3 /* LXMusicTool.m in Sources */,
 				1CF17D1C1E018DE0005C2D53 /* LXLRCTableView.m in Sources */,
 				1CFC17CB1DE875F60085C9DE /* LXTopView.m in Sources */,
+				E9B74EE71E31902300D08477 /* LXDownLoadCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1188,6 +1207,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
@@ -1205,6 +1225,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;

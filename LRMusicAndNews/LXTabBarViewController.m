@@ -6,20 +6,20 @@
 //  Copyright © 2016年 ***REMOVED***. All rights reserved.
 //
 
-#import "LXtabbarViewController.h"
+#import "LXTabBarViewController.h"
 #import "LXOnlineMusicController.h"
 #import "SetController.h"
-#import "LXnavigationController.h"
+#import "LXNavigationController.h"
 #import "LXMyMusicViewController.h"
 #import "LXtabbar.h"
-@interface LXtabbarViewController ()<LXtabbarDelegate>
+@interface LXTabBarViewController()<LXtabbarDelegate>
 {
     UIView *_indicatorView;
 }
 @property (nonatomic,strong)LXtabbar *maintabBar;
 @end
 
-@implementation LXtabbarViewController
+@implementation LXTabBarViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpmainTabBar];
@@ -58,16 +58,13 @@
     controller.tabBarItem.title = title;
     controller.title = title;
     controller.tabBarItem.image = [[UIImage imageNamed:imageNameStr] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal  ];
-    LXnavigationController *nav = [[LXnavigationController alloc]initWithRootViewController:controller];
+    LXNavigationController *nav = [[LXNavigationController alloc]initWithRootViewController:controller];
     [self.maintabBar addTabBarBtWithTabBarItem:controller.tabBarItem];
     [self addChildViewController:nav];
   
 }
 
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
+
 -(void)tabBar:(LXtabbar *)tabBar didselectedButtonFrom:(long)fromBurrnTag to:(long)toButtonTag{
     self.selectedIndex = toButtonTag;
     CGRect frame = _indicatorView.frame;

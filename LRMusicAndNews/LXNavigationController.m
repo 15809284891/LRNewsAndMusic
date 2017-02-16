@@ -6,9 +6,9 @@
 //  Copyright © 2016年 ***REMOVED***. All rights reserved.
 //
 
-#import "LXnavigationController.h"
-
-@implementation LXnavigationController
+#import "LXNavigationController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+@implementation LXNavigationController
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
         [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
@@ -28,7 +28,6 @@
         frame.size = CGSizeMake(70, 30);
         button.frame = frame;
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//        button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
         viewController.hidesBottomBarWhenPushed = YES;
     }
@@ -36,12 +35,9 @@
 }
 -(void)back{
     self.navigationBar.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.0];
+    [SVProgressHUD dismiss];
     [self popViewControllerAnimated:YES];
 }
-//- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
-//    
-//    return [super popViewControllerAnimated:YES];
-//}
 -(UIViewController *)popViewControllerAnimated:(BOOL)animated{
     return [super popViewControllerAnimated:animated];
 }

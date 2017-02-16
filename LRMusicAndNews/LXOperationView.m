@@ -40,7 +40,6 @@
 }
 -(void)setTitles:(NSArray *)titles{
     _titles = titles;
-    NSLog(@"-----11111111111111---%@",titles);
     for (int i = 0; i<self.subviews.count; i++) {
         LXHorizontalButton *button = self.subviews[i];
 //        [button setTitle:titles[i] forState:UIControlStateNormal];

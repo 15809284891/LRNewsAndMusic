@@ -21,6 +21,7 @@
 @property (nonatomic,strong)NSArray *albumContents;
 @property (nonatomic,strong)UIView *descriptionView;
 @property (nonatomic,strong)LXAlbumDescripView*des;
+@property (nonatomic,strong)AFHTTPSessionManager *manager;
 @end
 @implementation LXRecommmandListViewController
 -(NSArray *)albumContents{
@@ -75,7 +76,8 @@
     }];
 }
 -(void)requestData{
-    [[AFHTTPSessionManager manager]POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.album.getAlbumInfo",@"album_id":@(self.album.album_id)) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    _manager = [AFHTTPSessionManager manager];
+    [_manager POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.album.getAlbumInfo",@"album_id":@(self.album.album_id)) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
         self.album = [LXAlbum mj_objectWithKeyValues:responseObject[@"albumInfo"]];
         [self.des initDataWithPictureUrl:self.album.pic_small addTitle:_album.title addContent:_album.info];
@@ -119,5 +121,8 @@
     }];
     self.navigationController.navigationBarHidden = YES;
 
+}
+-(void)dealloc{
+    [self.manager.operationQueue cancelAllOperations];
 }
 @end

@@ -15,6 +15,7 @@
 @property (nonatomic,strong)LXRankMenuListHeaderView *tableHeaderView;
 @property (nonatomic,strong)NSMutableArray *defaultSongList;
 @property (nonatomic,strong)NSString *tagStr;
+@property (nonatomic,strong)AFHTTPSessionManager *manager;
 @end
 static const NSString *identity = @"musicListCell";
 @implementation LXRankMenuListController
@@ -38,8 +39,8 @@ static const NSString *identity = @"musicListCell";
 }
 
 -(void)requestData{
-    [[AFHTTPSessionManager manager]POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.billboard.billList",@"offset":@"0",@"size":@"196",@"type":self.rankMenu.type) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"11111111111%@",responseObject[@"song_list"]);
+    _manager = [AFHTTPSessionManager manager];
+    [_manager POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.billboard.billList",@"offset":@"0",@"size":@"196",@"type":self.rankMenu.type) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         self.rankMenu =[LXRankMenu mj_objectWithKeyValues:responseObject[@"billboard"]];
         self.rankMenu.contents = [LXSong mj_objectArrayWithKeyValuesArray:responseObject[@"song_list"]];
@@ -59,5 +60,8 @@ static const NSString *identity = @"musicListCell";
         cell.delegate = self;
         cell.song = song;
         return cell;
+}
+-(void)dealloc{
+    [self.manager.operationQueue cancelAllOperations];
 }
 @end

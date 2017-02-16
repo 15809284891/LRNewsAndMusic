@@ -20,15 +20,16 @@
 @property (nonatomic,strong)LXSong *song;
 @property (nonatomic,strong)LXSong *playingMusic;
 @property (nonatomic,strong)NSArray *musics;
-@property (nonatomic,strong)NSTimer *timer;
+@property (nonatomic,strong)CADisplayLink *displayLink;
 @property (nonatomic,weak)id<LXPlayerMusicToolDelegate >delegate;
 +(LXPlayerMusicTool *)shareMusicPlay;
 //停止播放
 -(void)stopPlayMusicWithURLStr:(NSString *)urlstr;
 //暂停播放
--(void)pauseWithURLStr:(NSString *)urlstr;
+-(void)pausePlayingMusic;
 //准备播放
--(void)preparePlayMusicWithURLStr:(LXSong*)song;
+-(void)preparePlayMusicWithURLStr:(NSString*)showURL;
+-(void)preparePlayMusicWithFilePath:(NSString *)filePathURL;
 -(LXSong *)nextMusic;
 -(LXSong *)previousMusic;
 //添加定时器

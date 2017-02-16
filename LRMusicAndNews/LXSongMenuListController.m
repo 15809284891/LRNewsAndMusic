@@ -26,6 +26,7 @@
 @property (nonatomic,strong)LXSongMenuDescripView *des;
 @property (nonatomic,strong)NSArray *songMenuContents;
 @property (nonatomic,strong)LXRightIndicater *rightTableView;
+@property (nonatomic,strong)AFHTTPSessionManager *manager;
 @end
 static NSString *identity = @"songMenuCell";
 @implementation LXSongMenuListController
@@ -98,7 +99,8 @@ static NSString *identity = @"songMenuCell";
 
 }
 -(void)requestData{
-    [[AFHTTPSessionManager manager]POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.diy.gedanInfo",@"listid":self.listID) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    _manager = [AFHTTPSessionManager manager];
+    [_manager POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.diy.gedanInfo",@"listid":self.listID) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LXSongMenu *songMenu = [LXSongMenu mj_objectWithKeyValues:responseObject];
         self.songs= [LXSong mj_objectArrayWithKeyValuesArray:responseObject[@"content"]];
         [self.des initDataWithPictureUrl:songMenu.pic_300 addTitle:songMenu.title addContent:songMenu.desc];
@@ -330,5 +332,7 @@ static NSString *identity = @"songMenuCell";
 -(void)showuserInfo{
     
 }
-
+-(void)dealloc{
+    [self.manager.operationQueue cancelAllOperations];
+}
 @end

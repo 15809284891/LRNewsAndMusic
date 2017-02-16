@@ -13,6 +13,7 @@
  *  歌曲名
  */
 @property (nonatomic,copy) NSString *title;
+@property (nonatomic,assign)CGFloat progressValue;
 /**
  *  榜单作者
  */

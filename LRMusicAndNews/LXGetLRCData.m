@@ -22,14 +22,18 @@
 }
 
 -(void)getLRCarray:(LXSong *)song :(LXGetLRCDataBlock)block{
-    
+    if (song.lrcLink.length== 0) {
+        block(nil);
+    }
+    else{
     NSString *cachePayh = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject];
     NSString *savePath = [cachePayh stringByAppendingString:song.songName];
-    NSLog(@"%@",savePath);
+//    NSLog(@"%@",savePath);
     BOOL result = [[NSFileManager defaultManager]fileExistsAtPath:savePath];
     if (result) {
         NSString *str = [NSString stringWithContentsOfFile:savePath encoding:NSUTF8StringEncoding error:nil];
         [self parseLrc:str];
+        NSLog(@"lrcArray  :%@",self.lrcArray);
         block(self.lrcArray);
     }
     
@@ -37,7 +41,7 @@
         NSURL *url = [NSURL URLWithString:song.lrcLink];
         NSURLRequest *req = [[NSURLRequest alloc]initWithURL:url];
         NSURLSession *session = [NSURLSession sharedSession];
-        NSLog(@"%@",req);
+//        NSLog(@"%@",req);
         NSURLSessionDownloadTask *downLoadTask = [session downloadTaskWithRequest:req completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (!error) {
                 NSError *saveError;
@@ -46,6 +50,8 @@
                 if (!saveError) {
                     NSString *str = [NSString stringWithContentsOfFile:savePath encoding:NSUTF8StringEncoding error:nil];
                     [self parseLrc:str];
+                    NSLog(@"lrcArray  :%@",self.lrcArray);
+
                     block(self.lrcArray);
                 }
                 else{
@@ -56,6 +62,7 @@
             
         }];
         [downLoadTask resume];
+    }
     }
 
 }

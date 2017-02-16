@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LXtabbarViewController : UITabBarController
+@interface LXTabBarViewController : UITabBarController
 
 @end

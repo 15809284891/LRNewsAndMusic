@@ -13,4 +13,5 @@
 +(UIImage *)circleImage:(UIImage *)oldImage borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 -(UIColor *)mostColor;
 - (UIColor *)colorAtPixel:(CGPoint)point ;
++(UIImage *)compressionSizeWithImage:(UIImage *)image size:(CGSize)size;
 @end

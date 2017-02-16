@@ -14,8 +14,8 @@
 static NSString *identity = @"newSongCell";
 @interface LXNewSongController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong)NSMutableArray *newSongs;
-@property(nonatomic,strong)UICollectionView *collectionView;
-
+@property (nonatomic,strong)UICollectionView *collectionView;
+@property (nonatomic,strong)AFHTTPSessionManager *manager;
 @end
 
 @implementation LXNewSongController
@@ -29,8 +29,8 @@ static NSString *identity = @"newSongCell";
     [super viewDidLoad];
         self.view.backgroundColor = [UIColor lightGrayColor];
     [self setUpCollectionView];
-    [[AFHTTPSessionManager manager]POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.plaza.getRecommendAlbum",@"offset":@0,@"limit":@50,@"type":@4) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"-----%@",responseObject);
+    _manager = [AFHTTPSessionManager manager];
+    [_manager POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.plaza.getRecommendAlbum",@"offset":@0,@"limit":@50,@"type":@4) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSMutableArray *array = [NSMutableArray array];
         array=[LXAlbum mj_objectArrayWithKeyValuesArray:responseObject[@"plaze_album_list"][@"RM"][@"album_list"][@"list"]];
         for (LXAlbum*newSong in array) {
@@ -104,12 +104,11 @@ static NSString *identity = @"newSongCell";
     LXRecommmandListViewController *reCommandVc = [[LXRecommmandListViewController alloc]init];
     reCommandVc.album= newSong;
     [self.navigationController pushViewController:reCommandVc animated:YES]
-    ;}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
+    ;
 }
-
+-(void)dealloc{
+    [self.manager.operationQueue cancelAllOperations];
+}
 
 
 @end

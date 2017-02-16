@@ -10,7 +10,7 @@
 #import "LXMusicOperationView.h"
 #import <AVFoundation/AVFoundation.h>
 #import "LXOnlineMusicController.h"
-#import "LXtabbarViewController.h"
+#import "LXTabBarViewController.h"
 #import <AFNetworkActivityIndicatorManager.h>
 @interface AppDelegate ()
 {
@@ -25,8 +25,9 @@
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 //    LXnavigationController*nav = [[LXnavigationController alloc]initWithRootViewController:[[LXOnlineMusicController alloc]init]];
 //    [AFNetworkingactivi]
+    [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    self.window.rootViewController = [[LXtabbarViewController alloc]init];
+    self.window.rootViewController = [[LXTabBarViewController alloc]init];
     [self.window makeKeyAndVisible];
    
     return YES;
@@ -46,11 +47,13 @@
 }
 +(UIBackgroundTaskIdentifier)backgroundPlayerID:(UIBackgroundTaskIdentifier)baTaskID{
     //设置并激活音频回话类别
+    //后台播放
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord
+             withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
+                   error:nil];
+    //会话激活
     [session setActive:YES error:nil];
-    //允许应用程序接受远程控制
-    [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
     //设置后台任务id
     UIBackgroundTaskIdentifier newTaskID = UIBackgroundTaskInvalid;
     newTaskID = [[UIApplication sharedApplication]beginBackgroundTaskWithExpirationHandler:nil];

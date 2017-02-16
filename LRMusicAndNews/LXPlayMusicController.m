@@ -18,6 +18,8 @@
 #import "LXGetLRCData.h"
 #import "LXImageContentView.h"
 #import "LXHorizontalButton.h"
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
 #import "LXDownLoadSong.h"
 @interface LXPlayMusicController ()<LXmusicOperarionDelegate,LXPlayerMusicToolDelegate,LXImageContentViewDelegate,LXLRCTableViewDelegate>
 @property (nonatomic,strong)LXImageContentView *ImageContentView;
@@ -33,7 +35,9 @@
 @property (nonatomic,strong)UIProgressView *progressView;
 @property (nonatomic,strong) UISlider *slider;
 @property (nonatomic,strong)UIView *sliderAndProgressView;
+
 @end
+NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
 @implementation LXPlayMusicController
 - (instancetype)init
 {
@@ -60,7 +64,7 @@
     _slider = [[UISlider alloc]init];
     _slider.minimumTrackTintColor = MainColor;
     _slider.maximumTrackTintColor  =[UIColor clearColor];
-    [_slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventTouchUpInside];
     [_progressView addSubview:_slider];
     _currentLb = [[UILabel alloc]init];
     _currentLb.textColor = [UIColor whiteColor];
@@ -75,7 +79,7 @@
     [_progressView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(50);
         make.right.equalTo(-50);
-        make.height.equalTo(2);
+        make.height.equalTo(3);
         make.centerY.equalTo(_sliderAndProgressView.centerY);
     }];
     [_slider makeConstraints:^(MASConstraintMaker *make) {
@@ -103,8 +107,9 @@
         NSDictionary *tempdic = tempArray[0];
         self.song = [LXSong mj_objectWithKeyValues:tempdic];
         self.scrollerLb.lableText = self.song.songName;
-        [_playMusicTool preparePlayMusicWithURLStr:_song];
+        [_playMusicTool preparePlayMusicWithURLStr:_song.showLink];
          _playMusicTool.playingMusic = self.song;
+        [self configNowPlayingCenter];
         _ImageContentView.song = self.song;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"----%@",error);
@@ -125,10 +130,27 @@
     //请求数据
     [self requestSongData];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadLRCTable:) name:@"loadLRC" object:nil];
+
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //开始接受远程控制
+    [[UIApplication  sharedApplication]beginReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[UIApplication sharedApplication]endReceivingRemoteControlEvents];
+    [self canBecomeFirstResponder];
+}
+-(BOOL)canResignFirstResponder{
+    return YES;
+}
+
 -(void)reloadLRCTable:(NSNotification *)noticy{
     NSArray *array = (NSArray *)(noticy.object);
     self.lrcTable.lrcArray = array;
+    NSLog(@"%ld",self.lrcTable.lrcArray.count);
 }
 -(void)setUpBlurView{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth, ViewHeight)];
@@ -144,6 +166,10 @@
     self.scrollerLb  = [[LXScrollerLable alloc]initWithFrame:CGRectMake(70, 20, ViewWidth-140, 44)];
     self.scrollerLb.lableText = self.song.title;
     [self.view addSubview:_scrollerLb];
+}
+-(void)sliderValueChanged:(UISlider *)sender{
+    LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
+    [tool seekToTimeWithValue:sender.value];
 }
 
 -(void)setupOperationView{
@@ -177,7 +203,6 @@
     }];
     LXGetLRCData   *data = [[LXGetLRCData alloc]init];
     [data   getLRCarray:self.song :^(NSArray *lrcArray) {
-//        NSLog(@"------%@",[NSThread currentThread]);
         lrcT.lrcArray  = lrcArray;
     }];
 }
@@ -194,6 +219,7 @@
         LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
         LXDownLoadSong *downloadSong = [[LXDownLoadSong alloc]init];
         [downloadSong downFileWithURL:tool.playingMusic.showLink];
+        [[NSNotificationCenter defaultCenter]postNotificationName:addDownloadSongProgress object:tool.playingMusic];
     }
 }
 #pragma mark  -LXmusicOperarionDelegate
@@ -216,7 +242,7 @@
                [_playMusicTool preparePlayMusicWithURLStr:_song];
         }
         else{
-            [_playMusicTool  pauseWithURLStr:self.song.showLink];
+            [_playMusicTool  pausePlayingMusic];
         }
     }
     //下一曲
@@ -231,17 +257,21 @@
     else if(sender.tag == 105){
         LXSong *song =[_playMusicTool previousMusic];
         [_playMusicTool preparePlayMusicWithURLStr:song];
-
+        
     }
 
 }
 -(void)endOfPlayAction{
-    _playMusicTool.playingMusic = _playMusicTool.playingMusic;
+//    _playMusicTool.playingMusic = _playMusicTool.playingMusic;
+    
     LXSong *song = [_playMusicTool nextMusic];
     _song.song_id = song.song_id;
     [self requestSongData];
 }
 -(void)getCurrentTime:(NSString *)currentTime Totle:(NSString *)totleTime Progress:(CGFloat)progress{
+    
+    self.totalTime = totleTime;
+    self.playTime = currentTime;
     self.currentLb.text= currentTime;
     self.totalLb.text= totleTime;
     self.slider.value= progress;
@@ -251,5 +281,54 @@
 -(void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event{
+    LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
+    switch (event.subtype)    {
+        case UIEventSubtypeRemoteControlPlay:
+            [tool preparePlayMusicWithURLStr:tool.playingMusic];
+            [self configNowPlayingCenter];
+            NSLog(@"远程播放");
+            break;
+        case UIEventSubtypeRemoteControlPause:
+            [tool pausePlayingMusic];
+            NSLog(@"远程暂停");
+            break;
+        case UIEventSubtypeRemoteControlNextTrack:{
+            _playMusicTool.playingMusic = _playMusicTool.playingMusic;
+            LXSong *song = [_playMusicTool nextMusic];
+            _song.song_id = song.song_id;
+            [self requestSongData];
+            [self configNowPlayingCenter];
+            NSLog(@"remote_下一首");
+            break;
+        }
+        case UIEventSubtypeRemoteControlPreviousTrack:{
+            _playMusicTool.playingMusic = _playMusicTool.playingMusic;
+            LXSong *song = [_playMusicTool previousMusic];
+            _song.song_id = song.song_id;
+            [self requestSongData];
+            [self configNowPlayingCenter];
+            NSLog(@"播放上一首");
+            break;
+        }
+        case UIEventSubtypeRemoteControlTogglePlayPause://ios6暂停
+            [tool pausePlayingMusic];
+            break;
+        default:
+            break;
+    }
+}
+-(void)configNowPlayingCenter{
+    NSLog(@"锁屏设置");
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    [info setObject:self.song.songName forKey:MPMediaItemPropertyTitle];
+    [info setObject:self.song.artistName forKey:MPMediaItemPropertyArtist];
+    [info setObject:self.currentLb.text forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    [info setObject:@(1) forKey:MPNowPlayingInfoPropertyPlaybackRate];
+    [info setObject:self.totalLb.text forKey:MPMediaItemPropertyPlaybackDuration];
+    NSLog(@"总时间%@",self.totalTime);
+//    MPMediaItemArtwork *artWork = [[MPMediaItemArtwork alloc]initWithImage:[UIImage imageNamed:_song.songPicRadio]];
+//    [info setObject:artWork forKey:MPMediaItemPropertyArtwork];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:info];
+}
 @end

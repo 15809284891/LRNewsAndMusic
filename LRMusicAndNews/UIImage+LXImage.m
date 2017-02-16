@@ -150,5 +150,45 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
-
++(UIImage *)compressionSizeWithImage:(UIImage *)image size:(CGSize)size{
+    UIImage *newImage = nil;
+    CGSize imageSize = image.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    CGFloat targetWidth = size.width;
+    CGFloat targetHeight = size.height;
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaleWidth = targetWidth;
+    CGFloat scaleheight = targetHeight;
+    CGPoint thumnailPoint = CGPointMake(0.0, 0.0);
+    if (CGSizeEqualToSize(imageSize, size) == NO) {
+        CGFloat widthFactor = targetWidth/width;
+        CGFloat heightFactor = targetHeight/height;
+        if (widthFactor>heightFactor) {
+            scaleFactor = widthFactor;
+        }else{
+            scaleFactor = heightFactor;
+        }
+        scaleWidth = widthFactor *scaleFactor;
+        scaleheight = height*scaleFactor;
+        if (widthFactor>heightFactor) {
+            thumnailPoint.y = (targetHeight-scaleheight)*0.5;
+        }else if (widthFactor < heightFactor){
+            thumnailPoint.x = (targetWidth - scaleWidth);
+        }
+    }
+    UIGraphicsBeginImageContext(size);
+    CGRect thumnailRect = CGRectZero;
+    thumnailRect.origin = thumnailPoint;
+    thumnailRect.size.width = scaleWidth;
+    thumnailRect.size.height = scaleheight;
+    [image drawInRect:thumnailRect];
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    if (newImage == nil) {
+        NSLog(@"缩放失败");
+    }
+    UIGraphicsEndImageContext();
+    return newImage;
+    
+}
 @end

@@ -114,7 +114,6 @@ static NSIndexPath *selectedIndexPath;
     [self requestData];
     [self setUptableHeaderView];
     self.navigationBarBackView.backgroundColor =[UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(order:) name:@"order" object:nil];
 }
 //初始化tableView
@@ -156,7 +155,6 @@ static NSIndexPath *selectedIndexPath;
 }
 
 -(void)orderByWay:(NSMutableArray *)oldArray{
-    NSLog(@"oldArray      %@",oldArray);
     NSMutableArray *keyArray = [NSMutableArray array];
     NSMutableArray *resault = [NSMutableArray array];
     NSMutableArray *lowerCaseArray = [NSMutableArray  array];
@@ -170,7 +168,6 @@ static NSIndexPath *selectedIndexPath;
     NSString *str = [newArray[0] substringToIndex:1];
     NSMutableArray *characterArray = [NSMutableArray array];
     NSMutableArray *otherArray = [NSMutableArray array];
-    NSLog(@" newArray    %@",newArray);
     for (int i =0; i<newArray.count; i++) {
           NSString *firstStr = [newArray[i] substringToIndex:1];
         BOOL isA = [self MatchLetter:firstStr];
@@ -181,8 +178,6 @@ static NSIndexPath *selectedIndexPath;
             [otherArray addObject:[_wayAndSongDic objectForKey: newArray[i] ]];
         }
     }
-    NSLog(@"  characterArray %@",characterArray);
-    NSLog(@"    otherArray%@",otherArray);
     int i = 0;
     NSMutableArray *groupArray =[NSMutableArray array];
     while (i<characterArray.count) {
@@ -190,8 +185,6 @@ static NSIndexPath *selectedIndexPath;
         NSString *firstStr = [characterArray[i] substringToIndex:1];
         if ([firstStr isEqualToString:str]) {
             [groupArray addObject:[_wayAndSongDic objectForKey:characterArray[i]]];
-            NSLog(@"groupArray %@",groupArray);
-            NSLog(@" resault %@",resault);
             if (characterArray.count == 1) {
                 NSMutableDictionary *dic = [NSMutableDictionary dictionary];
                 [dic setObject:groupArray forKey:str];
@@ -228,7 +221,6 @@ static NSIndexPath *selectedIndexPath;
     _songs= resault;
     LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
     tool.musics =resault;
-    NSLog(@"77777777   %@",self.groupsDic);
     [self.tableView reloadData];
 
 }
@@ -370,14 +362,11 @@ static NSIndexPath *selectedIndexPath;
 
     }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-   
-//    _rightTableView.hidden = NO;
     CGFloat contentOffsety  = scrollView.contentOffset.y;
       if (contentOffsety>60||contentOffsety<0) {
         self.scrollerLb.lableText = self.scrollerText;
         self.tableView.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
         CGFloat height = scrollView.frame.size.height;
-        CGFloat contentYoffset = scrollView.contentOffset.y;
         CGFloat distanceFromBottom = scrollView.contentSize.height - height;
         //当tableView到达底部以后，恢复成原来的背景颜色
         if (distanceFromBottom - contentOffsety<=0) {
@@ -395,22 +384,24 @@ static NSIndexPath *selectedIndexPath;
 }
 //为什么要下滑两次才会更新contentInset
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    if (self.tableViewContentOffsety==64) {
-
+    NSLog(@"%lf",self.tableViewContentOffsety);
+    if ((int)self.tableViewContentOffsety==64) {
+        NSLog(@"我是64");
         self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+        [self.view setNeedsLayout];
     }
     
    if(self.tableViewContentOffsety  == -34){
             [UIView animateWithDuration:0.1 animations:^{
-                self.tableView.contentInset = UIEdgeInsetsMake(34, 0, 0, 0);
+            self.tableView.contentInset = UIEdgeInsetsMake(34, 0, 0, 0);
+                [self.view setNeedsDisplay];
+                NSLog(@"我是-34");
 
     }];
 
     
     }
 
-//    _rightTableView.hidden = YES;
 }
 
 
@@ -464,9 +455,6 @@ static NSIndexPath *selectedIndexPath;
     }
     else if([title isEqualToString:@"下载"]){
         NSLog(@"下载");
-//        NSLog(@"%@",_operationSong.lrclink);
-        
-       
     }
     else if([title isEqualToString:@"收藏"]){
         NSLog(@"收藏");

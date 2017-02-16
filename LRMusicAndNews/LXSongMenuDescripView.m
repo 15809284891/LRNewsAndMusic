@@ -48,12 +48,15 @@
         CGFloat alpha = 0.0;
         [color getRed:&red green:&green blue:&blue alpha:&alpha];
         
-        if (red>0.9&&green>0.9&blue>0.9) {
+        if (red>0.99&&green>0.99&blue>0.99) {
             NSLog(@"-red--%f",red);
             NSLog(@"--green%f",green);
             NSLog(@"--blue%f",blue);
             NSLog(@"---alpha%f",alpha);
-            color = [UIColor lightGrayColor];
+//            color = [UIColor lightGrayColor];
+            red = 204/255.0;
+            green = red;
+            blue= green;
         }
        [UIView animateWithDuration:2 animations:^{
             self.backgroundColor = color;

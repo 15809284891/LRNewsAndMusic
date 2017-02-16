@@ -105,10 +105,6 @@ static NSString *identity = @"selectCell";
     LXSelectListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.isSelected = song.isSelected;
 
-    for (int i = 0; i<self.songList.count; i++) {
-        LXSong *song = self.songList[i];
-//        NSLog(@"------%@----%d",song.title,song.isSelected?YES:NO);
-    }
     cell.selectedBt.selected= song.isSelected ;
     [self.tableView reloadData];
 }

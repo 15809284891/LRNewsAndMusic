@@ -24,9 +24,7 @@
     [super layoutSubviews];
 
     self.imageView.frame = CGRectMake(0, 7, 16, 16);
-//    CGPoint center = self.imageView.center;
-//    center.y = self.center.y;
-//    self.imageView.center = center;
+
     
     self.titleLabel.frame = CGRectMake(16+self.dis,0, self.frame.size.width-20, self.frame.size.height);
     

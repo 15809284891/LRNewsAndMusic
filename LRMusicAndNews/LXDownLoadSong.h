@@ -17,4 +17,5 @@
 -(void)downFileWithURL:(NSString *)urlStr;
 -(void)pauseDownloadWithURL:(NSString *)urlStr;
 -(void)deleteDownLoadWithURL:(NSString *)urlStr;
+-(void)continueDownLoad;
 @end

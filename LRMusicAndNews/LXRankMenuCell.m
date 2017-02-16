@@ -18,6 +18,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        NSLog(@"eeeeeeeeeeeeeeeeeeeee");
+        
         _RankImage = [[UIImageView alloc]init];
         _RankImage.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:_RankImage];

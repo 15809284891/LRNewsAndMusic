@@ -15,6 +15,7 @@
 @interface LXRankMenuController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *rankMenus;
+@property (nonatomic,strong) AFHTTPSessionManager *manager;
 @end
 static  NSString *idenity = @"songRankCell";
 @implementation LXRankMenuController
@@ -27,7 +28,7 @@ static  NSString *idenity = @"songRankCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     LXDatabase *database = [[LXDatabase  alloc]init];
-   BOOL flag =  [database openDataBase];
+    BOOL flag =  [database openDataBase];
     self.view.backgroundColor = LXBacColor;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setUpTableView];
@@ -50,8 +51,8 @@ static  NSString *idenity = @"songRankCell";
  *  请求榜单数据
  */
 -(void)requestRankMenuData{
-    [[AFHTTPSessionManager manager] POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.billboard.billCategory",@"kflag":@"1") success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"2222222222222%@",responseObject);
+    _manager = [AFHTTPSessionManager manager];
+    [_manager POST:LXMUSICURL parameters:LXParams(@"method":@"baidu.ting.billboard.billCategory",@"kflag":@"1") success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        _rankMenus = [LXRankMenu mj_objectArrayWithKeyValuesArray:responseObject[@"content"]];
         for (int i = 0; i<_rankMenus.count; i++) {
             LXRankMenu *rankMenu = _rankMenus[i];
@@ -85,6 +86,8 @@ static  NSString *idenity = @"songRankCell";
     rankMenuListVc.rankMenu = rankMenu;
     [self.navigationController pushViewController:rankMenuListVc animated:YES];
 
-    }
-
+}
+-(void)dealloc{
+    [self.manager.operationQueue cancelAllOperations];
+}
 @end
