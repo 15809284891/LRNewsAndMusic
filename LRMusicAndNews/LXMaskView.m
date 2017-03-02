@@ -37,8 +37,6 @@
     [self.delegate dissmissView:sender];
 }
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    // 点击的view的类名
-    NSLog(@"%@", NSStringFromClass([touch.view class]));
     
     // 点击了tableViewCell，view的类名为UITableViewCellContentView，则不接收Touch点击事件
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {

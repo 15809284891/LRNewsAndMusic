@@ -28,7 +28,7 @@
 //暂停播放
 -(void)pausePlayingMusic;
 //准备播放
--(void)preparePlayMusicWithURLStr:(NSString*)showURL;
+-(void)preparePlayMusicWithURLStr:(LXSong*)song;
 -(void)preparePlayMusicWithFilePath:(NSString *)filePathURL;
 -(LXSong *)nextMusic;
 -(LXSong *)previousMusic;

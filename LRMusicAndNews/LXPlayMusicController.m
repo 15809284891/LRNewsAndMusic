@@ -57,15 +57,22 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
         make.bottom.equalTo(_operationView.top);
         make.top.equalTo(_ImageContentView.bottom);
     }];
-    _progressView = [[UIProgressView alloc]init];
-    _progressView.tintColor = [UIColor colorWithRed:217/255.0 green:217/255.0 blue:217/255.0 alpha:1.0];
-    _progressView.trackTintColor = [UIColor darkGrayColor];
-    [_sliderAndProgressView addSubview:_progressView];
     _slider = [[UISlider alloc]init];
     _slider.minimumTrackTintColor = MainColor;
     _slider.maximumTrackTintColor  =[UIColor clearColor];
-    [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventTouchUpInside];
-    [_progressView addSubview:_slider];
+    [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [_sliderAndProgressView addSubview:_slider];
+    [_slider makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(50);
+        make.right.equalTo(-50);
+        make.top.equalTo(_sliderAndProgressView.top);
+        make.bottom.equalTo(_sliderAndProgressView.bottom);
+    }];
+    _progressView = [[UIProgressView alloc]init];
+    _progressView.tintColor = [UIColor colorWithRed:217/255.0 green:217/255.0 blue:217/255.0 alpha:1.0];
+    _progressView.trackTintColor = [UIColor darkGrayColor];
+    [_sliderAndProgressView insertSubview:_progressView belowSubview:_slider];
+  
     _currentLb = [[UILabel alloc]init];
     _currentLb.textColor = [UIColor whiteColor];
     _currentLb.font = [UIFont systemFontOfSize:14.0];
@@ -79,11 +86,14 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     [_progressView makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(50);
         make.right.equalTo(-50);
-        make.height.equalTo(3);
-        make.centerY.equalTo(_sliderAndProgressView.centerY);
+        make.height.equalTo(2);
+        make.centerY.equalTo(_slider).offset(0.8);
     }];
     [_slider makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_progressView);
+        make.left.equalTo(50);
+        make.right.equalTo(-50);
+        make.height.equalTo(3);
+        make.centerY.equalTo(_sliderAndProgressView.centerY);
     }];
     [_currentLb makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(5);
@@ -107,7 +117,7 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
         NSDictionary *tempdic = tempArray[0];
         self.song = [LXSong mj_objectWithKeyValues:tempdic];
         self.scrollerLb.lableText = self.song.songName;
-        [_playMusicTool preparePlayMusicWithURLStr:_song.showLink];
+        [_playMusicTool preparePlayMusicWithURLStr:_song];
          _playMusicTool.playingMusic = self.song;
         [self configNowPlayingCenter];
         _ImageContentView.song = self.song;
@@ -119,7 +129,7 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:31/255.0 green:30/255.0 blue:30/255.0 alpha:1.0];
     //加高斯模糊
-    [self setUpBlurView];
+//    [self setUpBlurView];
     //设置导航栏标题
     [self setupSCrollerLb];
     //设置中间的内容
@@ -130,7 +140,6 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     //请求数据
     [self requestSongData];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadLRCTable:) name:@"loadLRC" object:nil];
-
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -150,7 +159,7 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
 -(void)reloadLRCTable:(NSNotification *)noticy{
     NSArray *array = (NSArray *)(noticy.object);
     self.lrcTable.lrcArray = array;
-    NSLog(@"%ld",self.lrcTable.lrcArray.count);
+    NSLog(@"------------------%@",self.lrcTable.lrcArray);
 }
 -(void)setUpBlurView{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth, ViewHeight)];
@@ -168,10 +177,16 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     [self.view addSubview:_scrollerLb];
 }
 -(void)sliderValueChanged:(UISlider *)sender{
+
     LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
     [tool seekToTimeWithValue:sender.value];
+//    [tool removeCurrentTimer];
 }
-
+//-(void)sliderEnd:(UISlider*)sender{
+//    NSLog(@"滑动结束");
+//    LXPlayerMusicTool *tool = [LXPlayerMusicTool shareMusicPlay];
+//    [tool seekToTimeWithValue:sender.value];
+//}
 -(void)setupOperationView{
     _operationView = [[LXMusicOperationView alloc]init];
     _operationView.delegate = self;
@@ -192,6 +207,8 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
 #pragma mark LXImageContentViewDelegate
 -(void)LXImageContentViewTouchImage{
     self.ImageContentView .alpha = 0;
+//    self.ImageContentView.userInteractionEnabled = YES;
+//    self.ImageContentView = nil;
     LXLRCTableView *lrcT = [[LXLRCTableView alloc]initWithFrame:CGRectMake(40,64, mainScreenWidth-80,mainScreenHeight-64-90)];
     lrcT.backgroundColor = [UIColor clearColor];
     lrcT.delegate = self;

@@ -176,7 +176,6 @@ static NSString *identity = @"songMenuCell";
     }
     //返回分组个数+1；
      NSArray *datas  = self.groupsDic[@"datas"];
-    NSLog(@"                  %@",self.groupsDic);
     return datas.count+1;
 }
 
@@ -312,9 +311,7 @@ static NSString *identity = @"songMenuCell";
     }
 #pragma mark - LXSongMenuTableHeaderViewDelegate
 -(void)showDesDetail{
-    NSLog(@"------------show");
-  
-    [UIView animateWithDuration:0.3f animations:^{
+       [UIView animateWithDuration:0.3f animations:^{
       self.descriptionView.hidden = NO;
         [self.des initDataWithPictureUrl:self.songMenu.pic_300 addTitle:_songMenu.title addContent:_songMenu.desc];
     }];

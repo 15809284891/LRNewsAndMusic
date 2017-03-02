@@ -89,25 +89,10 @@ static NSString *  const  identity = @"collectionCell";
 #pragma mark - UICollectionViewDataSource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     LXSongMenuCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identity forIndexPath:indexPath];
-//    for (UIView *view in cell.contentView.subviews) {
-//        [view removeFromSuperview];
-//    }
     LXSongMenu *songMenu = self.songMenus[indexPath.row];
     NSLog(@"---------%lf",songMenu.width);
     cell.songMenu = songMenu;
     cell.contentView.backgroundColor= [UIColor colorWithRed:242/255.20 green:244/255.0 blue:245/255.0 alpha:1.0];
-//    LXSongMenuImageView *imageView = [[LXSongMenuImageView alloc]init];
-//    imageView.frame = CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.width);
-//    imageView.songmenu = songMenu;
-//    [cell.contentView  addSubview:imageView];
-//    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(0, imageView.frame.size.height, cell.contentView.frame.size.width, 40)];
-//    lb.font = [UIFont systemFontOfSize:13.0];
-//    lb.numberOfLines = 0;
-//    lb.lineBreakMode = NSLineBreakByCharWrapping;
-//    lb.text =songMenu.title;
-//    
-//    [cell.contentView addSubview:lb];
-    
     return cell;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -142,5 +127,6 @@ static NSString *  const  identity = @"collectionCell";
 #pragma mark - 打开数据库
 -(void)dealloc{
     [self.manager.operationQueue cancelAllOperations];
+    [SVProgressHUD dismiss];
 }
 @end

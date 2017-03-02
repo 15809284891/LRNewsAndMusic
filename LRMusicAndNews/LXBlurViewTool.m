@@ -9,7 +9,7 @@
 #import "LXBlurViewTool.h"
 
 @implementation LXBlurViewTool
-+(void)blurView:(UIView *)view :(UIBarStyle)style{
++(void)blurView:(UIImageView*)view :(UIBarStyle)style{
     UIToolbar *blurView = [[UIToolbar alloc]init];
     blurView.barStyle = style;
 //    blurView.alpha = 0.5;

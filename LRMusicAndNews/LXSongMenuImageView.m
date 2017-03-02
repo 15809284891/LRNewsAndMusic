@@ -32,10 +32,8 @@
 }
 -(void)setSongmenu:(LXSongMenu *)songmenu{
     _songmenu = songmenu;
-    NSLog(@"%@",self.songmenu.pic_300);
     [self.bacImage sd_setImageWithURL:self.songmenu.pic_300 placeholderImage:[UIImage imageNamed:@"test1.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         image = [UIImage compressionSizeWithImage:image size:CGSizeMake((mainScreenWidth-30)/2.0, (mainScreenWidth-30)/2.0)];
-        NSLog(@"%lf",image.size.height);
     }];
     [self.authorBT setTitle:self.songmenu.tag forState:UIControlStateNormal   ];
     [self.listeningBT setTitle:self.songmenu.collectnum forState:UIControlStateNormal];

@@ -268,12 +268,10 @@ static NSIndexPath *selectedIndexPath;
         NSMutableArray *oldArray = [NSMutableArray array];
         for (int i = 0; i<_songs.count; i++) {
             LXSong *song = _songs[i ];
-            NSLog(@"artist_name          %@",song.album_title);
             NSMutableString *mutableString =  [self tranFormChineseIntoEnglish:song.author];
             [oldArray addObject:mutableString];
             [self.wayAndSongDic setObject:song forKey:[mutableString lowercaseString]];
         }
-        NSLog(@" oldArray%@",oldArray);
         [self orderByWay:oldArray];
     }
     
@@ -384,9 +382,7 @@ static NSIndexPath *selectedIndexPath;
 }
 //为什么要下滑两次才会更新contentInset
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"%lf",self.tableViewContentOffsety);
     if ((int)self.tableViewContentOffsety==64) {
-        NSLog(@"我是64");
         self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
         [self.view setNeedsLayout];
     }
@@ -395,7 +391,6 @@ static NSIndexPath *selectedIndexPath;
             [UIView animateWithDuration:0.1 animations:^{
             self.tableView.contentInset = UIEdgeInsetsMake(34, 0, 0, 0);
                 [self.view setNeedsDisplay];
-                NSLog(@"我是-34");
 
     }];
 

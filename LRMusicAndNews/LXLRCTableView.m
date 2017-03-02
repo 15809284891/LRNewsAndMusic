@@ -11,18 +11,28 @@
 #import "LXLRC.h"
 @interface LXLRCTableView()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
+@property (nonatomic,strong)NSTimer *timer;
 @end
 @implementation LXLRCTableView
+static int count=0;
 int currentRow =0 ;
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         [self seupTableView];
+        self.timer  = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            count++;
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            [self.tableView reloadData];
+            
+        }];
+
     }
     return self;
 }
 -(void)setCurrentTime:(NSString *)currentTime{
+    NSLog(@"%@",currentTime);
     _currentTime = currentTime;
     if (self.lrcArray.count!=0) {
         NSArray *arr1 = [_currentTime componentsSeparatedByString:@":"];
@@ -47,10 +57,9 @@ int currentRow =0 ;
                 break;
             }
         }
-        NSLog(@"---------%d",currentRow);
-       
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:currentRow inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-//         [self.tableView reloadData];
+        NSLog(@"%d",currentRow);
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:currentRow inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        [self.tableView reloadData];
     }
    
 }
@@ -64,18 +73,15 @@ int currentRow =0 ;
 }
 -(void)setLrcArray:(NSArray *)lrcArray{
     _lrcArray = lrcArray;
-    NSLog(@"%ld",lrcArray.count);
-    NSLog(@"1111111111  %@",[NSThread currentThread]);
     [self.tableView reloadData];
 }
 -(void)seupTableView{
     UITapGestureRecognizer*tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
     [self addGestureRecognizer:tap];
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.showsHorizontalScrollIndicator = NO;
-//    _tableView.bounces = NO;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -102,7 +108,7 @@ int currentRow =0 ;
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"count  %ld",_lrcArray.count);
+//    NSLog(@"hahahahah");
     return _lrcArray.count;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

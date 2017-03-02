@@ -144,7 +144,6 @@
     }];
 }
 -(void)gestureClick{
-    NSLog(@"---------------------");
     [self.delegate showDesdetail];
 }
 -(void)userclick{

@@ -50,7 +50,6 @@
     }
 }
 -(void)addTabBarBtWithTabBarItem:(UITabBarItem *)tabBarItem{
-    NSLog(@"%@",tabBarItem);
     LXtabbarItem *tabbarBt = [[LXtabbarItem alloc]init];
     tabbarBt.tabbarItem = tabBarItem;
 

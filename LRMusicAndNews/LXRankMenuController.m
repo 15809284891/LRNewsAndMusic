@@ -27,6 +27,7 @@ static  NSString *idenity = @"songRankCell";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"调用了我几次");
     LXDatabase *database = [[LXDatabase  alloc]init];
     BOOL flag =  [database openDataBase];
     self.view.backgroundColor = LXBacColor;
@@ -89,5 +90,6 @@ static  NSString *idenity = @"songRankCell";
 }
 -(void)dealloc{
     [self.manager.operationQueue cancelAllOperations];
+    [SVProgressHUD dismiss];
 }
 @end

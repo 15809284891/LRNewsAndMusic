@@ -81,7 +81,7 @@
     [mgr moveItemAtURL:location toURL:[NSURL fileURLWithPath:filePath] error:NULL];
 }
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
-    NSLog(@"下载进度%lf",1.0*totalBytesWritten/totalBytesExpectedToWrite);
+//    NSLog(@"下载进度%lf",1.0*totalBytesWritten/totalBytesExpectedToWrite);
     NSString *progressStr = [NSString stringWithFormat:@"%lf",1.0*totalBytesWritten/totalBytesExpectedToWrite];
     
 }

@@ -75,10 +75,12 @@ static NSMutableDictionary *_cacheProgressDic;
     return [songURL componentsSeparatedByString:@"?"][0];
 }
 //准备播放
--(void)preparePlayMusicWithURLStr:(NSString*)showURL{
+-(void)preparePlayMusicWithURLStr:(LXSong*)song{
+    NSString *showURL = song.showLink;
     //当前有正在播放的
     if (_currentItem) {
-        if ([([self getsongURL:_playingMusic.showLink])isEqualToString:showURL]) {
+        bool a = [([self getsongURL:_playingMusic.showLink])isEqualToString:showURL]?YES:NO;
+        if ([([self getsongURL:_playingMusic.showLink])isEqualToString:[self getsongURL:showURL]]) {
             [self beginPlayMusic];
         }
         
@@ -120,12 +122,10 @@ static NSMutableDictionary *_cacheProgressDic;
 }
 //播放歌曲
 -(void)beginPlayMusic{
-//    NSLog(@"77777777777777777777%@",self.playingMusic);
     //给当前对象添加监听者，监听播放进度
     if (self.displayLink==nil) {
           [self addCurrentTimeTimer];
     }
-    NSLog(@"111111111");
     [_player play];
     //播放后专辑开始旋转
     [[NSNotificationCenter defaultCenter]postNotificationName:@"startRotating" object:nil];
@@ -133,7 +133,6 @@ static NSMutableDictionary *_cacheProgressDic;
     [lrcData getLRCarray:self.playingMusic :^(NSArray *lrcArray) {
 
         [[NSNotificationCenter defaultCenter]postNotificationName:@"loadLRC" object:lrcArray];
-        NSLog(@"2222222222");
     }];
    
 }
@@ -184,12 +183,12 @@ static NSMutableDictionary *_cacheProgressDic;
 }
 //跳转到某个地方
 -(void)seekToTimeWithValue:(CGFloat)value{
-
     [self pausePlayingMusic];
     // 跳转
     [self.player seekToTime:CMTimeMake(value * [self getTotleTime], 1) completionHandler:^(BOOL finished) {
         if (finished == YES) {
-            [self preparePlayMusicWithURLStr:_playingMusic];
+//            [self preparePlayMusicWithURLStr:_playingMusic.showLink];
+            [self.player play];
                 [self.delegate getCurrentTime:[self valueToString:[self getCurrentTime]] Totle:[self valueToString:[self getTotleTime]] Progress:[self getProgress]];
         }
     }];

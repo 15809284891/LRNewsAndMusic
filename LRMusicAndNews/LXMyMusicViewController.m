@@ -65,7 +65,7 @@ static NSString *identity= @"downLoadCell";
 //    cell.songName = text;
     LXSong *song = self.downLoadingSong[indexPath.row];
     cell.songName = song.songName;
-    cell.progressValue = 
+//    cell.progressValue = rr
     cell.progressValue = 0.9;
     return cell;
 }

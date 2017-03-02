@@ -69,8 +69,8 @@
     _operationView.images = images1;
     _operationView.clos = images1.count;
     _operationView.titles = @[@"",@"",@"",@""];
-    _operationView.width = 45;
-    _operationView.height = 45;
+    _operationView.width = 30;
+    _operationView.height = 30;
     _operationView.delegate = self;
     [_operationView setupOperationSongView];
     [self addSubview:_operationView];
@@ -123,7 +123,7 @@
     }];
     [_operationView makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(0);
-        make.bottom.equalTo(-10);
+        make.bottom.equalTo(self.bottom).offset(-10);
         make.height.equalTo(45);
     }];
 }

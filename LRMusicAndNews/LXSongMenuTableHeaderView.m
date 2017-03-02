@@ -69,9 +69,7 @@
 
         const CGFloat *components = CGColorGetComponents(color.CGColor);
         NSArray *array = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%f",components[0]],[NSString stringWithFormat:@"%f",components[1]],[NSString stringWithFormat:@"%f",components[2]], nil];
-        NSLog(@"宋 rgg %@",array);
         [[NSUserDefaults standardUserDefaults]setObject:array forKey:self.songMenu.listid];
-        NSLog(@"-------%@",[NSUserDefaults  standardUserDefaults]);
 
     }];
 }

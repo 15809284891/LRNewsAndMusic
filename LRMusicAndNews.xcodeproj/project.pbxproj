@@ -884,6 +884,7 @@
 				TargetAttributes = {
 					1CBDBBCE1DC5BED60088FB8C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = RQ4XTMV76Q;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1207,7 +1208,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RQ4XTMV76Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
@@ -1225,7 +1226,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RQ4XTMV76Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
