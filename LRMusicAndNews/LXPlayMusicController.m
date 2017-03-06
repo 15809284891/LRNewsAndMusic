@@ -3,7 +3,7 @@
 //  LRMusicAndNews
 //
 //  Created by    karisli on 16/11/15.
-//  Copyright © 2016年 ***REMOVED***. All rights reserved.
+//  Copyright © 2016年 lixue. All rights reserved.
 //
 
 #import "LXPlayMusicController.h"
@@ -129,7 +129,7 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:31/255.0 green:30/255.0 blue:30/255.0 alpha:1.0];
     //加高斯模糊
-//    [self setUpBlurView];
+    [self setUpBlurView];
     //设置导航栏标题
     [self setupSCrollerLb];
     //设置中间的内容
@@ -159,7 +159,8 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
 -(void)reloadLRCTable:(NSNotification *)noticy{
     NSArray *array = (NSArray *)(noticy.object);
     self.lrcTable.lrcArray = array;
-    NSLog(@"------------------%@",self.lrcTable.lrcArray);
+    NSLog(@"--------啊啊啊啊啊啊啊啊啊 ----------%@",array);
+    NSLog(@"0---------bbbbbbbbbb%@",self.lrcTable);
 }
 -(void)setUpBlurView{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewWidth, ViewHeight)];
@@ -213,7 +214,6 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     lrcT.backgroundColor = [UIColor clearColor];
     lrcT.delegate = self;
     lrcT.alpha = 0;
-    _lrcTable = lrcT;
     [self.view addSubview:lrcT];
     [UIView animateWithDuration:1 animations:^{
         lrcT.alpha =0.5;
@@ -222,6 +222,7 @@ NSString *const addDownloadSongProgress = @"addDownloadSongProgress";
     [data   getLRCarray:self.song :^(NSArray *lrcArray) {
         lrcT.lrcArray  = lrcArray;
     }];
+    self.lrcTable = lrcT;
 }
 #pragma mark - LXLRCTableViewDelegate
 -(void)showImageContentView{

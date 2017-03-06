@@ -3,7 +3,7 @@
 //  LRMusicAndNews
 //
 //  Created by    karisli on 16/12/14.
-//  Copyright © 2016年 ***REMOVED***. All rights reserved.
+//  Copyright © 2016年 lixue. All rights reserved.
 //
 
 #import "LXLRCTableView.h"
@@ -59,7 +59,7 @@ int currentRow =0 ;
         }
         NSLog(@"%d",currentRow);
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:currentRow inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        [self.tableView reloadData];
+//        [self.tableView reloadData];
     }
    
 }

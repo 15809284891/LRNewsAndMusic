@@ -880,7 +880,7 @@
 			attributes = {
 				CLASSPREFIX = LX;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = ***REMOVED***;
+				ORGANIZATIONNAME = lixue;
 				TargetAttributes = {
 					1CBDBBCE1DC5BED60088FB8C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -1213,7 +1213,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNews;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1231,7 +1231,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LRMusicAndNews/PrefixHeader.pch";
 				INFOPLIST_FILE = LRMusicAndNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNews;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1243,7 +1243,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LRMusicAndNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LRMusicAndNews.app/LRMusicAndNews";
 			};
@@ -1255,7 +1255,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LRMusicAndNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LRMusicAndNews.app/LRMusicAndNews";
 			};
@@ -1266,7 +1266,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = LRMusicAndNewsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = LRMusicAndNews;
 				USES_XCTRUNNER = YES;
@@ -1278,7 +1278,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = LRMusicAndNewsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ***REMOVED***.LRMusicAndNewsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = lixue.LRMusicAndNewsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = LRMusicAndNews;
 				USES_XCTRUNNER = YES;

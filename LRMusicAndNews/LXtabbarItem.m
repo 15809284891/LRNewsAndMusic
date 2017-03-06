@@ -3,7 +3,7 @@
 //  LXMusicPlayer
 //
 //  Created by    karisli on 16/10/29.
-//  Copyright © 2016年 ***REMOVED***. All rights reserved.
+//  Copyright © 2016年 lixue. All rights reserved.
 //
 
 #import "LXtabbarItem.h"
@@ -44,7 +44,7 @@
        
         //只需要设置一次的放置在这里
         self.imageView.contentMode = UIViewContentModeBottom;
-        self.titleLabel.text  =@"***REMOVED***";
+        self.titleLabel.text  =@"lixue";
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont systemFontOfSize:12];
         [self setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
